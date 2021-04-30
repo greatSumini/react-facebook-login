@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "declaration": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "removeComments": true,
+    "noLib": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es6",
+    "sourceMap": false,
+    "allowJs": false,
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "lib": ["es2017"],
+    "baseUrl": "./"
+  },
+  "include": ["src/**/*", "tests"],
+  "exclude": ["node_modules", "**/*.spec.ts", "dist/**/*"]
+}

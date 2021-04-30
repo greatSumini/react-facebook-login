@@ -1,0 +1,32 @@
+{
+  "name": "@sumin/react-facebook-login",
+  "version": "0.0.0",
+  "description": "A React Component for Facebook Login",
+  "main": "/dist/index.js",
+  "scripts": {
+    "format": "prettier --write **/*.{ts,tsx} --ignore-path ./.prettierignore",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greatSumini/react-facebook-login.git"
+  },
+  "keywords": [
+    "react",
+    "facebook",
+    "oauth"
+  ],
+  "author": "greatSumini",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/greatSumini/react-facebook-login/issues"
+  },
+  "homepage": "https://github.com/greatSumini/react-facebook-login#readme",
+  "peerDependencies": {
+    "react": "^16.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1",
+    "typescript": "^4.2.4"
+  }
+}
