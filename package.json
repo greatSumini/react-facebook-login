@@ -1,8 +1,8 @@
 {
-  "name": "@sumin/react-facebook-login",
+  "name": "@greatsumini/react-facebook-login",
   "version": "0.0.0",
   "description": "A React Component for Facebook Login",
-  "main": "/dist/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "format": "prettier --write **/*.{ts,tsx} --ignore-path ./.prettierignore",
     "build": "tsc"
