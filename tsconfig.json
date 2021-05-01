@@ -1,9 +1,9 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "jsx": "preserve",
+    "target": "es2015",
+    "module": "es2015",
+    "jsx": "react",
     "declaration": true,
     "sourceMap": false,
     "allowJs": false,
