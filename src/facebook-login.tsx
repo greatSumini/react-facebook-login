@@ -26,11 +26,6 @@ export default function FacebookLogin(props: Props) {
       auth_type: '',
       return_scopes: false,
     },
-    dialogParams = {
-      redirect_uri: window?.location.href || '/',
-      state: 'facebookdirect',
-      response_type: 'code',
-    },
   } = props;
 
   useEffect(() => {
@@ -79,9 +74,14 @@ export default function FacebookLogin(props: Props) {
   const handleButtonClick = () => {
     if (isMobile && !disableMobileRedirect) {
       const params: DialogParams = {
-        ...dialogParams,
+        redirect_uri:
+          typeof window !== 'undefined' ? window?.location.href : '/',
+        state: 'facebookdirect',
+        response_type: 'code',
+        ...props.dialogParams,
         client_id: appId,
       };
+
       window.location.href = `https://www.facebook.com/dialog/oauth${objectToParams(
         params
       )}`;
