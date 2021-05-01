@@ -1,6 +1,11 @@
 {
   "name": "@greatsumini/react-facebook-login",
   "version": "0.1.0",
+  "keywords": [
+    "react",
+    "facebook",
+    "oauth"
+  ],
   "description": "A React Component for Facebook Login",
   "main": "dist/index.js",
   "scripts": {
@@ -15,21 +20,16 @@
     "build:storybook": "build-storybook",
     "storybook": "start-storybook -p 3000"
   },
+  "author": "greatSumini <greatSumini@gmail.com> (https://sumini.dev)",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/greatSumini/react-facebook-login.git"
   },
-  "keywords": [
-    "react",
-    "facebook",
-    "oauth"
-  ],
-  "author": "greatSumini",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/greatSumini/react-facebook-login/issues"
   },
-  "homepage": "https://github.com/greatSumini/react-facebook-login#readme",
+  "homepage": "https://sumini.dev/react-facebook-login",
   "peerDependencies": {
     "react": "^16.14.0"
   },
