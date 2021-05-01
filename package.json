@@ -2,6 +2,7 @@
   "name": "@greatsumini/react-facebook-login",
   "version": "0.0.5",
   "description": "A React Component for Facebook Login",
+  "type": "module",
   "main": "dist/index.js",
   "scripts": {
     "format": "prettier --write **/*.{ts,tsx} --ignore-path ./.prettierignore",
