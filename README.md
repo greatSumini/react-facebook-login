@@ -24,10 +24,16 @@ import FacebookLogin from '@greatsumini/react-facebook-login';
 
 ...
 
-    <FacebookLogin
-        appId="1088597931155576"
-        render={renderProps => (
-            <button onClick={renderProps.onClick}>This is my custom FB button</button>
-        )}
-    />
+<FacebookLogin
+    appId="1088597931155576"
+    onSuccess={(response) => {
+        console.log('Login Success!', response);
+    }}
+    onFail={(error) => {
+        console.log('Login Failed!', error);
+    }}
+    onProfileSuccess={(response) => {
+        console.log('Get Profile Success!', response);
+    }}
+/>
 ```
