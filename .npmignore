@@ -23,4 +23,5 @@ storybook-static/
 .eslint*
 .prettier*
 .gitignore
+jest*
 *.stories.*
