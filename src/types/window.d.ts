@@ -1,11 +1,11 @@
-import { FacebookInitParams } from './facebook';
+import { InitParams } from './params';
 export {};
 
 declare global {
   interface Window {
     fbAsyncInit;
     FB: {
-      init: (params: FacebookInitParams) => null;
+      init: (params: InitParams) => null;
     };
   }
 }

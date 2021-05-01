@@ -1,30 +1,34 @@
 import React, { useState, useEffect } from 'react';
 
 import { FacebookLoginProps } from './types';
-import { checkIsMobile } from './utils';
-import { loadFacebookSdk } from './utils/facebook';
+import { checkIsMobile, loadFacebookSdk } from './utils';
 
 export default function FacebookLogin(props: FacebookLoginProps) {
   const [isProcessing, setProcessing] = useState(false);
 
   const {
-    appId,
-    authType = '',
-    scope = 'public_profile, email',
-    isMobile = checkIsMobile(),
-    redirectUri = window?.location.href || '/',
-    state = 'facebookdirect',
-    responseType = 'code',
     isDisabled = false,
+    isMobile = checkIsMobile(),
+    scope = 'public_profile, email',
+    loginOptions = {
+      auth_type: '',
+      return_scopes: false,
+    },
+    dialogParams = {
+      redirect_uri: window?.location.href || '/',
+      state: 'facebookdirect',
+      response_type: 'code',
+    },
   } = props;
 
   const setFBAsyncInit = () => {
+    const { appId, initParams } = props;
     const {
       version = '9.0',
       xfbml = false,
       cookie = false,
       localStorage = true,
-    } = props;
+    } = initParams;
 
     window.fbAsyncInit = () => {
       window.FB.init({
@@ -48,5 +52,7 @@ export default function FacebookLogin(props: FacebookLoginProps) {
     setFBAsyncInit();
   };
 
-  return <>Hello World!</>;
+  const {} = props;
+
+  return <button type="button"></button>;
 }
