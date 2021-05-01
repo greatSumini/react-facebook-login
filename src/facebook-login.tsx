@@ -14,7 +14,11 @@ export default function FacebookLogin(props: Props) {
     language = 'en_US',
     scope = 'public_profile, email',
     fields = 'name,email,picture',
+    onSuccess,
+    onFail,
+    onProfileSuccess,
     children = 'Login with Facebook',
+    render,
     isMobile = checkIsMobile(),
     disableMobileRedirect = false,
     initParams = {
@@ -57,8 +61,6 @@ export default function FacebookLogin(props: Props) {
   };
 
   const requestLogin = () => {
-    const { onSuccess, onFail, onProfileSuccess } = props;
-
     window.FB.login(
       (res) => {
         if (!res.authResponse) {
@@ -93,8 +95,6 @@ export default function FacebookLogin(props: Props) {
       return;
     }
 
-    const { onFail } = props;
-
     if (!window.FB) {
       onFail && onFail({ status: 'facebookNotLoaded' });
       return;
@@ -102,6 +102,15 @@ export default function FacebookLogin(props: Props) {
 
     requestLogin();
   };
+
+  if (render) {
+    return render({
+      onSuccess,
+      onFail,
+      onProfileSuccess,
+      onClick: handleButtonClick,
+    });
+  }
 
   return (
     <button type="button" onClick={handleButtonClick}>

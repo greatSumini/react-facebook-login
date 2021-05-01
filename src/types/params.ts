@@ -1,4 +1,4 @@
-import { ReactChild } from 'react';
+import { ReactChild, ReactElement } from 'react';
 import { LoginResponse } from './response';
 
 export type InitParams = {
@@ -104,10 +104,12 @@ export type Props = Pick<InitParams, 'appId'> & {
    * @default "Login with Facebook" */
   children?: ReactChild;
 
-  /**
-   * Default value is false
-   */
-  isDisabled?: boolean;
+  /** render custom component */
+  render?: (
+    props: Pick<Props, 'onSuccess' | 'onProfileSuccess' | 'onFail'> & {
+      onClick?: () => void;
+    }
+  ) => ReactElement;
 
   /**
    * if true, redirect to dialog instead using window.FB
