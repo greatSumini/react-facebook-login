@@ -17,6 +17,7 @@ export default function FacebookLogin(props: Props) {
     onSuccess,
     onFail,
     onProfileSuccess,
+    style,
     children = 'Login with Facebook',
     render,
     isMobile = checkIsMobile(),
@@ -113,7 +114,7 @@ export default function FacebookLogin(props: Props) {
   }
 
   return (
-    <button type="button" onClick={handleButtonClick}>
+    <button type="button" onClick={handleButtonClick} style={style}>
       {children}
     </button>
   );

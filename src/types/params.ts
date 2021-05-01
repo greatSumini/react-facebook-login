@@ -1,4 +1,4 @@
-import { ReactChild, ReactElement } from 'react';
+import { CSSProperties, ReactChild, ReactElement } from 'react';
 import { LoginResponse } from './response';
 
 export type InitParams = {
@@ -99,6 +99,8 @@ export type Props = Pick<InitParams, 'appId'> & {
   onFail?: (err: unknown) => void;
 
   onProfileSuccess?: (res: unknown) => void;
+
+  style?: CSSProperties;
 
   /** Children Component
    * @default "Login with Facebook" */

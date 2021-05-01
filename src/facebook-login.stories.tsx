@@ -10,6 +10,21 @@ export default {
 
 export const Default = () => <FacebookLogin appId={appId} isMobile={false} />;
 
+export const WithStyle = () => (
+  <FacebookLogin
+    appId={appId}
+    isMobile={false}
+    style={{
+      backgroundColor: '#4267b2',
+      color: '#fff',
+      fontSize: '16px',
+      padding: '12px 24px',
+      border: 'none',
+      borderRadius: '4px',
+    }}
+  />
+);
+
 export const WithChildren = () => (
   <FacebookLogin
     appId={appId}
