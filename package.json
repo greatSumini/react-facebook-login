@@ -11,13 +11,15 @@
     "coverage": "jest --coverage",
     "build": "rimraf -rf dist && tsc -p tsconfig.json",
     "prepublish:npm": "npm run format && npm run lint && npm run test && npm run build",
-    "publish:npm": "npm publish --access public",
     "build:storybook": "build-storybook",
     "storybook": "start-storybook -p 3000"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/greatSumini/react-facebook-login.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "keywords": [
     "react",
