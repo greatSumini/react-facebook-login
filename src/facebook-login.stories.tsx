@@ -8,15 +8,4 @@ export default {
   component: FacebookLogin,
 };
 
-export const Default = () => (
-  <FacebookLogin
-    appId={appId}
-    isMobile={false}
-    onSuccess={(res) => {
-      console.log(res);
-    }}
-    onFail={(err) => {
-      console.log(err);
-    }}
-  />
-);
+export const Default = () => <FacebookLogin appId={appId} isMobile={false} />;

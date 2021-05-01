@@ -94,9 +94,9 @@ export type Props = Pick<InitParams, 'appId'> & {
    * @default 'name,email,picture' */
   fields?: string;
 
-  onSuccess: (res: LoginResponse['authResponse']) => void;
+  onSuccess?: (res: LoginResponse['authResponse']) => void;
 
-  onFail: (err: unknown) => void;
+  onFail?: (err: unknown) => void;
 
   onProfileSuccess?: (res: unknown) => void;
 

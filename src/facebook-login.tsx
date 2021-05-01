@@ -62,11 +62,11 @@ export default function FacebookLogin(props: Props) {
     window.FB.login(
       (res) => {
         if (!res.authResponse) {
-          onFail({ status: 'loginCancelled' });
+          onFail && onFail({ status: 'loginCancelled' });
           return;
         }
 
-        onSuccess(res.authResponse);
+        onSuccess && onSuccess(res.authResponse);
 
         if (onProfileSuccess) {
           window.FB.api(`me`, { fields }, onProfileSuccess);
@@ -96,7 +96,7 @@ export default function FacebookLogin(props: Props) {
     const { onFail } = props;
 
     if (!window.FB) {
-      onFail({ status: 'facebookNotLoaded' });
+      onFail && onFail({ status: 'facebookNotLoaded' });
       return;
     }
 
