@@ -1,6 +1,6 @@
 {
   "name": "@greatsumini/react-facebook-login",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A React Component for Facebook Login",
   "main": "dist/index.js",
   "scripts": {
@@ -12,14 +12,12 @@
     "build": "rimraf -rf dist && tsc -p tsconfig.json",
     "prepublish:npm": "npm run format && npm run lint && npm run test && npm run build",
     "build:storybook": "build-storybook",
-    "storybook": "start-storybook -p 3000"
+    "storybook": "start-storybook -p 3000",
+    "prepublish": "npm run format && npm run lint && npm run test && npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/greatSumini/react-facebook-login.git"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
   },
   "keywords": [
     "react",
