@@ -1,17 +1,28 @@
-export const isObject = (obj: unknown): obj is Record<string, any> => {
+export const isObject = (
+  obj: unknown
+): obj is Record<string, string | number | boolean> => {
   return Object.prototype.toString.call(obj) === '[object Object]';
 };
 
-/**
- * Encode object to url parameters
- *
- * @param      {Object} paramsObj The object needs to encode as url parameters
- * @return     {String} Encoded url parameters
- */
-export const objectToParams = (params: unknown) =>
-  isObject(params)
-    ? '?' +
-      Object.keys(params)
-        .map((param) => `${param}=${encodeURIComponent(params[param])}`)
-        .join('&')
-    : null;
+/** Encode object to url parameters */
+export const objectToParams = (obj: unknown): string => {
+  if (!isObject(obj)) {
+    return '';
+  }
+  return (
+    '?' +
+    Object.keys(obj)
+      .map((key) => `${key}=${encodeURIComponent(obj[key])}`)
+      .join('&')
+  );
+};
+
+/** Decode params to object */
+export const paramsToObject = (params: string): Record<string, string> =>
+  params
+    .replace(/^\?/, '')
+    .split('&')
+    .reduce((acc, chunk) => {
+      const [key, value] = chunk.split('=');
+      return { ...acc, [key]: value };
+    }, {});

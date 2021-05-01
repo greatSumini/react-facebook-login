@@ -1,3 +1,6 @@
+import { ReactChild } from 'react';
+import { LoginResponse } from './response';
+
 export type InitParams = {
   /**
    * Your application ID.
@@ -76,7 +79,7 @@ export type DialogParams = {
 
 export type LoginOptions = {
   /**
-   * Optional key, supports 3 values: rerequest, reauthenticate, reauthorize. Use rerequest when re-requesting a declined permission.
+   * supports 3 values: rerequest, reauthenticate, reauthorize.
    *
    * Default value is ''
    */
@@ -92,16 +95,11 @@ export type LoginOptions = {
   return_scopes?: boolean;
 };
 
-export type FacebookLoginProps = Pick<InitParams, 'appId'> & {
+export type Props = Pick<InitParams, 'appId'> & {
   /**
    * Default value is 'en_US'
    */
   language?: string;
-
-  /**
-   * Default value is false
-   */
-  isDisabled?: boolean;
 
   /**
    * Comma seperated list of permissions to request during login.
@@ -112,12 +110,31 @@ export type FacebookLoginProps = Pick<InitParams, 'appId'> & {
    */
   scope?: string;
 
+  onSuccess: (res: LoginResponse['authResponse']) => void;
+
+  onFail: (err: unknown) => void;
+
+  /** Children Component @default "Login with Facebook" */
+  children?: ReactChild;
+
+  /**
+   * Default value is false
+   */
+  isDisabled?: boolean;
+
   /**
    * if true, redirect to dialog instead using window.FB
    *
    * Defaultly detected via userAgent
    */
   isMobile?: boolean;
+
+  /**
+   * if true, use window.FB.login in mobile agent
+   *
+   * Default value is false
+   */
+  disableMobileRedirect?: boolean;
 
   initParams?: Omit<InitParams, 'appId'>;
 

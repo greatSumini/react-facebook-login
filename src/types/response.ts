@@ -1,6 +1,12 @@
-export type LoginStatusResponse = {
-  status: 'connected' | 'not_authorized' | 'unknown';
-  authResponse: {
+export enum LoginStatus {
+  connected,
+  not_authorized,
+  unknown,
+}
+
+export type LoginResponse = {
+  status: LoginStatus;
+  authResponse?: {
     /**
      * An access token for the person using the webpage.
      */
@@ -27,3 +33,5 @@ export type LoginStatusResponse = {
     userID: string;
   };
 };
+
+export type MeResponse = {};

@@ -1,15 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
-import { FacebookLoginProps } from './types';
-import { checkIsMobile, loadFacebookSdk } from './utils';
+import { DialogParams, Props } from './types';
+import {
+  checkIsMobile,
+  loadFacebookSdk,
+  objectToParams,
+  paramsToObject,
+} from './utils';
 
-export default function FacebookLogin(props: FacebookLoginProps) {
-  const [isProcessing, setProcessing] = useState(false);
-
+export default function FacebookLogin(props: Props) {
   const {
-    isDisabled = false,
-    isMobile = checkIsMobile(),
+    appId,
+    language = 'en_US',
     scope = 'public_profile, email',
+    children = 'Login with Facebook',
+    isMobile = checkIsMobile(),
+    disableMobileRedirect = false,
+    initParams = {
+      version: 'v9.0',
+      xfbml: false,
+      cookie: false,
+      localStorage: true,
+    },
     loginOptions = {
       auth_type: '',
       return_scopes: false,
@@ -21,38 +33,74 @@ export default function FacebookLogin(props: FacebookLoginProps) {
     },
   } = props;
 
-  const setFBAsyncInit = () => {
-    const { appId, initParams } = props;
-    const {
-      version = '9.0',
-      xfbml = false,
-      cookie = false,
-      localStorage = true,
-    } = initParams;
-
-    window.fbAsyncInit = () => {
-      window.FB.init({
-        appId,
-        version,
-        xfbml,
-        cookie,
-        localStorage,
-      });
-    };
-  };
-
   useEffect(() => {
     init();
   }, []);
 
-  const init = async () => {
-    const { language = 'en_US' } = props;
+  const checkIsRedirectedFromFb = () => {
+    const params = paramsToObject(window.location.search);
 
-    await loadFacebookSdk(language);
-    setFBAsyncInit();
+    return (
+      params['state'] === 'facebookdirect' &&
+      (params['code'] || params['granted_scopes'])
+    );
   };
 
-  const {} = props;
+  const init = async () => {
+    await loadFacebookSdk(language);
 
-  return <button type="button"></button>;
+    window.fbAsyncInit = () => {
+      window.FB.init({
+        appId,
+        ...initParams,
+      });
+      if (checkIsRedirectedFromFb()) {
+        requestLogin();
+      }
+    };
+  };
+
+  const requestLogin = () => {
+    const { onSuccess, onFail } = props;
+
+    window.FB.login(
+      (res) => {
+        if (!res.authResponse) {
+          onFail({ status: 'loginCancelled' });
+          return;
+        }
+
+        onSuccess(res.authResponse);
+      },
+      { ...loginOptions, scope }
+    );
+  };
+
+  const handleButtonClick = () => {
+    if (isMobile && !disableMobileRedirect) {
+      const params: DialogParams = {
+        client_id: appId,
+        ...dialogParams,
+      };
+      window.location.href = `https://www.facebook.com/dialog/oauth${objectToParams(
+        params
+      )}`;
+      return;
+    }
+
+    const { onFail } = props;
+
+    if (!window.FB) {
+      onFail({ status: 'facebookNotLoaded' });
+      return;
+    }
+
+    requestLogin();
+  };
+
+  return (
+    <button type="button" onClick={handleButtonClick}>
+      {children}
+    </button>
+  );
 }
