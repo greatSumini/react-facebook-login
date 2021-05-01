@@ -13,6 +13,7 @@ export default function FacebookLogin(props: Props) {
     appId,
     language = 'en_US',
     scope = 'public_profile, email',
+    fields = 'name,email,picture',
     children = 'Login with Facebook',
     isMobile = checkIsMobile(),
     disableMobileRedirect = false,
@@ -56,7 +57,7 @@ export default function FacebookLogin(props: Props) {
   };
 
   const requestLogin = () => {
-    const { onSuccess, onFail } = props;
+    const { onSuccess, onFail, onProfileSuccess } = props;
 
     window.FB.login(
       (res) => {
@@ -66,6 +67,10 @@ export default function FacebookLogin(props: Props) {
         }
 
         onSuccess(res.authResponse);
+
+        if (onProfileSuccess) {
+          window.FB.api(`me`, { fields }, onProfileSuccess);
+        }
       },
       { ...loginOptions, scope }
     );

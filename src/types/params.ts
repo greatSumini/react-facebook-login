@@ -110,9 +110,18 @@ export type Props = Pick<InitParams, 'appId'> & {
    */
   scope?: string;
 
+  /**
+   * fields return by /me
+   *
+   * Default value is 'name,email,picture'
+   */
+  fields?: string;
+
   onSuccess: (res: LoginResponse['authResponse']) => void;
 
   onFail: (err: unknown) => void;
+
+  onProfileSuccess?: (res: unknown) => void;
 
   /** Children Component @default "Login with Facebook" */
   children?: ReactChild;

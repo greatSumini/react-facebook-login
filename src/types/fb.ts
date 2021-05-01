@@ -9,5 +9,9 @@ export interface FB {
     options?: LoginOptions
   ) => void;
 
-  api: (path: string, callback: () => void) => void;
+  api: (
+    path: string,
+    params: { fields: string },
+    callback: (res: unknown) => void
+  ) => void;
 }
