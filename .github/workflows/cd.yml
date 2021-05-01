@@ -1,0 +1,55 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: CI
+
+on: 'push'
+  branch: 'master'
+
+jobs:
+  build:
+    name: CD
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # 👈 Required to retrieve git history
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Get npm cache directory
+        id: npm-cache
+        run: |
+          echo "::set-output name=dir::$(npm config get cache)"
+
+      - uses: actions/cache@v1
+        with:
+          path: ${{ steps.npm-cache.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install project dependencies
+        if: |
+          steps.npm-cache.outputs.cache-hit != 'true' ||
+          steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: npm install
+
+      - name: Build storybook
+        run: npm run build:storybook
+
+      - name: gh-page deploy
+        if: matrix.node-version == '12.x'
+        uses: maxheld83/ghpages@v0.3.0
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          BUILD_DIR: 'storybook-static/'
