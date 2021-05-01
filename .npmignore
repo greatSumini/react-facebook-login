@@ -19,3 +19,8 @@ node_modules/
 src/
 tests/
 storybook-static/
+
+.eslint*
+.prettier*
+.gitignore
+*.stories.*
