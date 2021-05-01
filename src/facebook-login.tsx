@@ -27,7 +27,7 @@ export default function FacebookLogin(props: Props) {
       return_scopes: false,
     },
     dialogParams = {
-      redirect_uri: window?.location.href || '/',
+      redirect_uri: undefined,
       state: 'facebookdirect',
       response_type: 'code',
     },
@@ -79,8 +79,9 @@ export default function FacebookLogin(props: Props) {
   const handleButtonClick = () => {
     if (isMobile && !disableMobileRedirect) {
       const params: DialogParams = {
-        client_id: appId,
         ...dialogParams,
+        client_id: appId,
+        redirect_uri: dialogParams.redirect_uri || window?.location.href || '/',
       };
       window.location.href = `https://www.facebook.com/dialog/oauth${objectToParams(
         params
