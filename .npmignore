@@ -1,5 +1,6 @@
 .github/
 .storybook/
+.vscode/
 coverage/
 example/
 node_modules/
