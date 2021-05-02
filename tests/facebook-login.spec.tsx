@@ -16,3 +16,31 @@ test("displays a 'Login with Facebook' message", () => {
   );
   expect(screen.getByText('Login with Facebook')).toBeInTheDocument();
 });
+
+test('displays children', () => {
+  render(
+    <FacebookLogin appId={appId} onSuccess={console.log} onFail={console.error}>
+      Hello World!
+    </FacebookLogin>
+  );
+  expect(screen.getByText('Hello World!')).toBeInTheDocument();
+
+  render(
+    <FacebookLogin appId={appId} onSuccess={console.log} onFail={console.error}>
+      <div data-testid="test" />
+    </FacebookLogin>
+  );
+  expect(screen.getByTestId('test')).toBeInTheDocument();
+});
+
+test('render custom component', () => {
+  render(
+    <FacebookLogin
+      appId={appId}
+      onSuccess={console.log}
+      onFail={console.error}
+      render={() => <div data-testid="test" />}
+    />
+  );
+  expect(screen.getByTestId('test')).toBeInTheDocument();
+});
