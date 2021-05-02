@@ -7,7 +7,7 @@
 [![CD](https://img.shields.io/github/workflow/status/greatSumini/react-facebook-login/CD?label=CD)](https://github.com/greatSumini/react-facebook-login/actions/workflows/cd.yml)
 [![GitHub Stars](https://img.shields.io/github/stars/greatSumini/react-facebook-login?style=social)](https://github.com/greatSumini/react-facebook-login)
 
-> An Well-Typed React Component for Facebook Login
+> Well-Typed React Component for Facebook Login
 
 This project aims to replace [react-facebook-login](https://github.com/keppelen/react-facebook-login).
 
@@ -32,16 +32,16 @@ import FacebookLogin from '@greatsumini/react-facebook-login';
 ...
 
 <FacebookLogin
-    appId="1088597931155576"
+  appId="1088597931155576"
     onSuccess={(response) => {
-        console.log('Login Success!', response);
-    }}
-    onFail={(error) => {
-        console.log('Login Failed!', error);
-    }}
-    onProfileSuccess={(response) => {
-        console.log('Get Profile Success!', response);
-    }}
+      console.log('Login Success!', response);
+  }}
+  onFail={(error) => {
+    console.log('Login Failed!', error);
+  }}
+  onProfileSuccess={(response) => {
+    console.log('Get Profile Success!', response);
+  }}
 />
 ```
 
