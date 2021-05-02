@@ -60,11 +60,12 @@ export default function FacebookLogin(props: Props) {
 
     window.fbAsyncInit = () => {
       window.FB.init(initParams);
-      if (
-        (autoLoad && !checkIsRedirectedFromFb()) ||
-        (checkIsRedirectedFromFb() && !usePopup)
-      ) {
+      if (autoLoad && !checkIsRedirectedFromFb()) {
         handleButtonClick();
+        return;
+      }
+      if (checkIsRedirectedFromFb() && !usePopup) {
+        requestLogin();
       }
     };
   };
