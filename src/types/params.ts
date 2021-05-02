@@ -88,7 +88,7 @@ export type Props = Pick<InitParams, 'appId'> & {
 
   onSuccess?: (res: LoginResponse['authResponse']) => void;
 
-  onFail?: (err: unknown) => void;
+  onFail?: (err: { status: string }) => void;
 
   onProfileSuccess?: (res: unknown) => void;
 
