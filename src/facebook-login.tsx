@@ -20,6 +20,7 @@ export default function FacebookLogin(props: Props) {
     style,
     children = 'Login with Facebook',
     render,
+    autoLoad = false,
     isMobile = checkIsMobile(),
     disableMobileRedirect = false,
     initParams = {
@@ -55,7 +56,7 @@ export default function FacebookLogin(props: Props) {
         appId,
         ...initParams,
       });
-      if (checkIsRedirectedFromFb()) {
+      if (autoLoad || checkIsRedirectedFromFb()) {
         requestLogin();
       }
     };

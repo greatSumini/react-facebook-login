@@ -96,6 +96,10 @@ export type Props = Pick<InitParams, 'appId'> & {
     }
   ) => ReactElement;
 
+  /** if true, request login on mount
+   * @default false */
+  autoLoad?: boolean;
+
   /** if true, redirect to dialog instead using window.FB
    * @default (detected via userAgent) */
   isMobile?: boolean;
