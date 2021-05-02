@@ -6,9 +6,10 @@ export const isObject = (
 
 /** Encode object to url parameters */
 export const objectToParams = (obj: unknown): string => {
-  if (!isObject(obj)) {
+  if (!isObject(obj) || Object.keys(obj).length === 0) {
     return '';
   }
+
   return (
     '?' +
     Object.keys(obj)
@@ -20,9 +21,9 @@ export const objectToParams = (obj: unknown): string => {
 /** Decode params to object */
 export const paramsToObject = (params: string): Record<string, string> =>
   params
-    .replace(/^\?/, '')
+    ?.replace(/^\?/, '')
     .split('&')
     .reduce((acc, chunk) => {
       const [key, value] = chunk.split('=');
       return { ...acc, [key]: value };
-    }, {});
+    }, {}) || {};
