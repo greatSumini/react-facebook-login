@@ -33,8 +33,8 @@ import FacebookLogin from '@greatsumini/react-facebook-login';
 
 <FacebookLogin
   appId="1088597931155576"
-    onSuccess={(response) => {
-      console.log('Login Success!', response);
+  onSuccess={(response) => {
+    console.log('Login Success!', response);
   }}
   onFail={(error) => {
     console.log('Login Failed!', error);
