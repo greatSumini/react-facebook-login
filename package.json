@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "keywords": [
     "react",
+    "reactjs",
     "facebook",
-    "oauth"
+    "oauth",
+    "typescript"
   ],
-  "description": "A React Component for Facebook Login",
+  "description": "Well-typed React Component for Facebook Login",
   "main": "dist/index.js",
   "scripts": {
     "format": "prettier --write **/*.{ts,tsx} --ignore-path ./.prettierignore",
