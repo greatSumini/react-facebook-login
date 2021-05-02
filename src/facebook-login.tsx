@@ -1,12 +1,7 @@
 import React, { useEffect } from 'react';
 
 import { DialogParams, InitParams, LoginOptions, Props } from './types';
-import {
-  checkIsMobile,
-  loadFacebookSdk,
-  objectToParams,
-  paramsToObject,
-} from './utils';
+import { loadFacebookSdk, objectToParams, paramsToObject } from './utils';
 
 export default function FacebookLogin(props: Props) {
   const {
@@ -21,8 +16,7 @@ export default function FacebookLogin(props: Props) {
     children = 'Login with Facebook',
     render,
     autoLoad = false,
-    isMobile = checkIsMobile(),
-    disableMobileRedirect = false,
+    usePopup = false,
   } = props;
 
   const initParams: InitParams = {
@@ -66,8 +60,11 @@ export default function FacebookLogin(props: Props) {
 
     window.fbAsyncInit = () => {
       window.FB.init(initParams);
-      if (autoLoad || checkIsRedirectedFromFb()) {
-        requestLogin();
+      if (
+        (autoLoad && !checkIsRedirectedFromFb()) ||
+        (checkIsRedirectedFromFb() && !usePopup)
+      ) {
+        handleButtonClick();
       }
     };
   };
@@ -83,7 +80,7 @@ export default function FacebookLogin(props: Props) {
         onSuccess && onSuccess(res.authResponse);
 
         if (onProfileSuccess) {
-          window.FB.api(`me`, { fields }, onProfileSuccess);
+          window.FB.api('me', { fields }, onProfileSuccess);
         }
       },
       { ...loginOptions, scope }
@@ -91,7 +88,7 @@ export default function FacebookLogin(props: Props) {
   };
 
   const handleButtonClick = () => {
-    if (isMobile && !disableMobileRedirect) {
+    if (!usePopup) {
       window.location.href = `https://www.facebook.com/dialog/oauth${objectToParams(
         {
           ...dialogParams,

@@ -8,7 +8,7 @@ export default {
   component: FacebookLogin,
 };
 
-export const Default = () => <FacebookLogin appId={appId} isMobile={false} />;
+export const Default = () => <FacebookLogin appId={appId} />;
 
 export const WithStyle = () => (
   <FacebookLogin
@@ -28,17 +28,12 @@ export const WithStyle = () => (
 );
 
 export const WithChildren = () => (
-  <FacebookLogin
-    appId={appId}
-    isMobile={false}
-    children={<div>Hello Facebook!</div>}
-  />
+  <FacebookLogin appId={appId} children={<div>Hello Facebook!</div>} />
 );
 
 export const WithRender = () => (
   <FacebookLogin
     appId={appId}
-    isMobile={false}
     render={({ onClick }) => <a onClick={onClick}>Custom Component</a>}
   />
 );

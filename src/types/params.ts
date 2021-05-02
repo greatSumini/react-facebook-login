@@ -110,12 +110,16 @@ export type Props = Pick<InitParams, 'appId'> & {
   autoLoad?: boolean;
 
   /** if true, redirect to dialog instead using window.FB
-   * @default (detected via userAgent) */
+   * @default (detected via userAgent) @deprecated */
   isMobile?: boolean;
 
   /** if true, use window.FB.login in mobile agent
-   * @default false */
+   * @default false @deprecated */
   disableMobileRedirect?: boolean;
+
+  /** if true, use window.FB.login instead redirect
+   * @default false */
+  usePopup?: boolean;
 
   initParams?: Omit<InitParams, 'appId'>;
 
