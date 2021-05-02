@@ -7,9 +7,7 @@ export enum LoginStatus {
 export type LoginResponse = {
   status: LoginStatus;
   authResponse?: {
-    /**
-     * An access token for the person using the webpage.
-     */
+    /** An access token for the person using the webpage. */
     accessToken: string;
 
     /**
@@ -27,9 +25,7 @@ export type LoginResponse = {
      */
     signedRequest: string;
 
-    /**
-     * The ID of the person using your webpage.
-     */
+    /** The ID of the person using your webpage. */
     userID: string;
   };
 };
