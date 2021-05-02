@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { DialogParams, Props } from './types';
+import { DialogParams, InitParams, LoginOptions, Props } from './types';
 import {
   checkIsMobile,
   loadFacebookSdk,
@@ -23,17 +23,30 @@ export default function FacebookLogin(props: Props) {
     autoLoad = false,
     isMobile = checkIsMobile(),
     disableMobileRedirect = false,
-    initParams = {
-      version: 'v9.0',
-      xfbml: false,
-      cookie: false,
-      localStorage: true,
-    },
-    loginOptions = {
-      auth_type: '',
-      return_scopes: false,
-    },
   } = props;
+
+  const initParams: InitParams = {
+    version: 'v9.0',
+    xfbml: false,
+    cookie: false,
+    localStorage: true,
+    ...props.initParams,
+    appId,
+  };
+  const dialogParams: DialogParams = {
+    redirect_uri:
+      typeof window !== 'undefined' ? location.origin + location.pathname : '/',
+    state: 'facebookdirect',
+    response_type: 'code',
+    ...props.dialogParams,
+    client_id: appId,
+  };
+  const loginOptions: LoginOptions = {
+    auth_type: '',
+    return_scopes: false,
+    ...props.loginOptions,
+    scope,
+  };
 
   useEffect(() => {
     init();
@@ -52,10 +65,7 @@ export default function FacebookLogin(props: Props) {
     await loadFacebookSdk(language);
 
     window.fbAsyncInit = () => {
-      window.FB.init({
-        appId,
-        ...initParams,
-      });
+      window.FB.init(initParams);
       if (autoLoad || checkIsRedirectedFromFb()) {
         requestLogin();
       }
@@ -82,19 +92,11 @@ export default function FacebookLogin(props: Props) {
 
   const handleButtonClick = () => {
     if (isMobile && !disableMobileRedirect) {
-      const params: DialogParams = {
-        redirect_uri:
-          typeof window !== 'undefined'
-            ? location.origin + location.pathname
-            : '/',
-        state: 'facebookdirect',
-        response_type: 'code',
-        ...props.dialogParams,
-        client_id: appId,
-      };
-
       window.location.href = `https://www.facebook.com/dialog/oauth${objectToParams(
-        params
+        {
+          ...dialogParams,
+          ...loginOptions,
+        }
       )}`;
       return;
     }
