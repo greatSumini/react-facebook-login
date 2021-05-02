@@ -45,14 +45,6 @@ jobs:
           steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm install
 
-      - name: Prepublish NPM
-        run: npm run prepublish:npm
-
-      # Publish to NPMJS
-      - uses: actions/setup-node@master
-        with:
-          node-version: 12
-          registry-url: 'https://registry.npmjs.org/'
       - name: Publish to NPMJS
         run: |
           npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
@@ -62,14 +54,3 @@ jobs:
         env:
           CI: true
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-
-      # Publish to GitHub Package Registry
-      - uses: actions/setup-node@master
-        with:
-          node-version: 12
-          registry-url: https://npm.pkg.github.com/
-          scope: '@greatSumini'
-      - name: Publish to GitHub Package Registry
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{github.token}}
