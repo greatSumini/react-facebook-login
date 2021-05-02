@@ -25,3 +25,4 @@ storybook-static/
 .gitignore
 jest*
 *.stories.*
+CHANGELOG.md
