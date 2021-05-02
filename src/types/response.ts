@@ -1,7 +1,7 @@
 export enum LoginStatus {
-  connected,
-  not_authorized,
-  unknown,
+  Connected = 'connected',
+  NotAuthorized = 'not_authorized',
+  Unknown = 'unknown',
 }
 
 export type LoginResponse = {
