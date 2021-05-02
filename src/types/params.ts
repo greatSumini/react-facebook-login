@@ -117,9 +117,9 @@ export type Props = Pick<InitParams, 'appId'> & {
    * @default false @deprecated */
   disableMobileRedirect?: boolean;
 
-  /** if true, use window.FB.login instead redirect
+  /** if true, use redirect instead of window.FB.login
    * @default false */
-  usePopup?: boolean;
+  useRedirect?: boolean;
 
   initParams?: Omit<InitParams, 'appId'>;
 

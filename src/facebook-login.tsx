@@ -16,7 +16,7 @@ export default function FacebookLogin(props: Props) {
     children = 'Login with Facebook',
     render,
     autoLoad = false,
-    usePopup = false,
+    useRedirect = false,
   } = props;
 
   const initParams: InitParams = {
@@ -64,7 +64,7 @@ export default function FacebookLogin(props: Props) {
         handleButtonClick();
         return;
       }
-      if (checkIsRedirectedFromFb() && !usePopup) {
+      if (checkIsRedirectedFromFb() && useRedirect) {
         requestLogin();
       }
     };
@@ -89,7 +89,7 @@ export default function FacebookLogin(props: Props) {
   };
 
   const handleButtonClick = () => {
-    if (!usePopup) {
+    if (useRedirect) {
       window.location.href = `https://www.facebook.com/dialog/oauth${objectToParams(
         {
           ...dialogParams,
