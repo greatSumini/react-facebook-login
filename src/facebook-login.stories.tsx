@@ -13,7 +13,9 @@ export const Default = () => <FacebookLogin appId={appId} isMobile={false} />;
 export const WithStyle = () => (
   <FacebookLogin
     appId={appId}
-    isMobile={false}
+    initParams={{
+      version: 'v10.0',
+    }}
     style={{
       backgroundColor: '#4267b2',
       color: '#fff',

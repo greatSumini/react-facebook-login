@@ -9,8 +9,17 @@ export type InitParams = {
   /** Determines which versions of the Graph API and any API dialogs or plugins are invoked
    *
    * (available versions: https://developers.facebook.com/docs/graph-api/changelog)
-   * @default '9.0' */
-  version?: string;
+   * @default 'v9.0' */
+  version?:
+    | 'v3.2'
+    | 'v3.3'
+    | 'v4.0'
+    | 'v5.0'
+    | 'v6.0'
+    | 'v7.0'
+    | 'v8.0'
+    | 'v9.0'
+    | 'v10.0';
 
   /** Determines whether a cookie is created for the session or not. If enabled, it can be accessed by server-side code.
    * @default false */
