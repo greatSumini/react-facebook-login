@@ -84,7 +84,9 @@ export default function FacebookLogin(props: Props) {
     if (isMobile && !disableMobileRedirect) {
       const params: DialogParams = {
         redirect_uri:
-          typeof window !== 'undefined' ? window?.location.href : '/',
+          typeof window !== 'undefined'
+            ? location.origin + location.pathname
+            : '/',
         state: 'facebookdirect',
         response_type: 'code',
         ...props.dialogParams,

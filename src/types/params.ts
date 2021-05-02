@@ -30,7 +30,7 @@ export type DialogParams = {
   client_id: string;
 
   /** The URL that you want to redirect the person logging in back to. This URL will capture the response from the Login Dialog. If you are using this in a webview within a desktop app, this must be set to https://www.facebook.com/connect/login_success.html. You can confirm that this URL is set for your app in the App Dashboard. Under Products in the App Dashboard's left side navigation menu, click Facebook Login, then click Settings. Verify the Valid OAuth redirect URIs in the Client OAuth Settings section.
-   * @default (window?.location.href || '/') */
+   * @default (typeof window !== 'undefined' ? location.origin + location.pathname : '/') */
   redirect_uri: string;
 
   /** A string value created by your app to maintain state between the request and callback. This parameter should be used for preventing Cross-site Request Forgery and will be passed back to you, unchanged, in your redirect URI.
