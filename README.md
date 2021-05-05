@@ -45,6 +45,26 @@ import FacebookLogin from '@greatsumini/react-facebook-login';
 />
 ```
 
+## Props
+
+| Property         | Description                                                                                                                     | Type          | Default                                                                                             |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------- |
+| appId \*         | Your application ID.                                                                                                            | string        | -                                                                                                   |
+| language         | API version                                                                                                                     | string        | 'en_US'                                                                                             |
+| scope            | Comma seperated list of permissions for login.                                                                                  | string        | 'public_profile, email'                                                                             |
+| fields           | fields return by /me (profile)                                                                                                  | string        | 'name,email,picture'                                                                                |
+| onSuccess        |                                                                                                                                 | function      | -                                                                                                   |
+| onFail           |                                                                                                                                 | function      | -                                                                                                   |
+| onProfileSuccess |                                                                                                                                 | function      | -                                                                                                   |
+| style            | css properties for login button                                                                                                 | CSSProperties | -                                                                                                   |
+| children         | Children Component                                                                                                              | ReactChild    | "Login with Facebook"                                                                               |
+| render           | Callback which render custom component                                                                                          | function      | -                                                                                                   |
+| autoLoad         | if true, request login on mount                                                                                                 | boolean       | false                                                                                               |
+| useRedirect      | if true, use redirect instead of window.FB.login                                                                                | boolean       | false                                                                                               |
+| initParams       | params for FB.init ([docs](https://github.com/greatSumini/react-facebook-login/blob/master/docs/params.md#1-initparams))        | InitParams    | [docs](https://github.com/greatSumini/react-facebook-login/blob/master/docs/params.md#1-initparams) |
+| dialogParams     | params for login dialog ([docs](https://github.com/greatSumini/react-facebook-login/blob/master/docs/params.md#2-dialogparams)) | DialogParams  | [docs](https://github.com/greatSumini/react-facebook-login/blob/master/docs/params.md#1-initparams) |
+| loginOptions     | options for FB.login ([docs](https://github.com/greatSumini/react-facebook-login/blob/master/docs/params.md#3-loginoptions))    | LoginOptions  | [docs](https://github.com/greatSumini/react-facebook-login/blob/master/docs/params.md#1-initparams) |
+
 ## Links
 
 - [NPM](https://www.npmjs.com/package/@greatsumini/react-facebook-login)
