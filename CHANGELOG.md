@@ -2,6 +2,10 @@
 
 # Release Notes
 
+## 1.3.2
+
+- add className to FacebookLoginProps (b8f7b73)
+
 ## 1.3.1
 
 - add korean guide to README.md (17e4e2c)
