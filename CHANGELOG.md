@@ -2,6 +2,12 @@
 
 # Release Notes
 
+## 1.3.0
+
+- remove deprecated props (isMobile, disableMobileRedirect) (d6897a2)
+- rename Props to FacebookLoginProps (555c5c2)
+- update README.md Usage section (43c3835)
+
 ## 1.2.2
 
 - add CHANGELOG.md
