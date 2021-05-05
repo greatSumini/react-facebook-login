@@ -112,14 +112,6 @@ export type FacebookLoginProps = Pick<InitParams, 'appId'> & {
    * @default false */
   autoLoad?: boolean;
 
-  /** if true, redirect to dialog instead using window.FB
-   * @default (detected via userAgent) @deprecated */
-  isMobile?: boolean;
-
-  /** if true, use window.FB.login in mobile agent
-   * @default false @deprecated */
-  disableMobileRedirect?: boolean;
-
   /** if true, use redirect instead of window.FB.login
    * @default false */
   useRedirect?: boolean;
