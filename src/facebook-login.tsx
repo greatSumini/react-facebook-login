@@ -1,9 +1,14 @@
 import React, { useEffect } from 'react';
 
-import { DialogParams, InitParams, LoginOptions, Props } from './types';
+import {
+  DialogParams,
+  InitParams,
+  LoginOptions,
+  FacebookLoginProps,
+} from './types';
 import { loadFacebookSdk, objectToParams, paramsToObject } from './utils';
 
-export default function FacebookLogin(props: Props) {
+export default function FacebookLogin(props: FacebookLoginProps) {
   const {
     appId,
     language = 'en_US',

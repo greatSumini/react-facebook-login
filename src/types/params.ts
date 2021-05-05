@@ -72,7 +72,7 @@ export type LoginOptions = {
   return_scopes?: boolean;
 };
 
-export type Props = Pick<InitParams, 'appId'> & {
+export type FacebookLoginProps = Pick<InitParams, 'appId'> & {
   /** @default 'en_US' */
   language?: string;
 
@@ -100,7 +100,10 @@ export type Props = Pick<InitParams, 'appId'> & {
 
   /** render custom component */
   render?: (
-    props: Pick<Props, 'onSuccess' | 'onProfileSuccess' | 'onFail'> & {
+    props: Pick<
+      FacebookLoginProps,
+      'onSuccess' | 'onProfileSuccess' | 'onFail'
+    > & {
       onClick?: () => void;
     }
   ) => ReactElement;
