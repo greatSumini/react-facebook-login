@@ -2,6 +2,10 @@
 
 # Release Notes
 
+## 1.3.1
+
+- add korean guide to README.md (17e4e2c)
+
 ## 1.3.0
 
 - remove deprecated props (isMobile, disableMobileRedirect) (d6897a2)
