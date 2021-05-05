@@ -9,6 +9,7 @@
 
 > Well-Typed React Component for Facebook Login
 
+[한글 가이드](https://sumini.dev/guide/016-react-facebook-login/)<br>
 This project aims to replace [react-facebook-login](https://github.com/keppelen/react-facebook-login).
 
 - 💙 Typescript support
