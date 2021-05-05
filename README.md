@@ -16,7 +16,7 @@ This project aims to replace [react-facebook-login](https://github.com/keppelen/
 - 👫 All browsers supported
 - 🏃 Currently maintaining
 
-## Getting Started
+## 1. Getting Started
 
 ```shell
 npm i --save @greatsumini/react-facebook-login
@@ -24,13 +24,17 @@ npm i --save @greatsumini/react-facebook-login
 yarn add @greatsumini/react-facebook-login
 ```
 
-## Usage
+## 2. Usage
+
+### 2.1. import
 
 ```tsx
 import FacebookLogin from '@greatsumini/react-facebook-login';
+```
 
-...
+### 2.2. Default
 
+```tsx
 <FacebookLogin
   appId="1088597931155576"
   onSuccess={(response) => {
@@ -45,7 +49,60 @@ import FacebookLogin from '@greatsumini/react-facebook-login';
 />
 ```
 
-## Props
+### 2.3. Custom Style
+
+```tsx
+<FacebookLogin
+  appId="1088597931155576"
+  style={{
+    backgroundColor: '#4267b2',
+    color: '#fff',
+    fontSize: '16px',
+    padding: '12px 24px',
+    border: 'none',
+    borderRadius: '4px',
+  }}
+/>
+```
+
+### 2.3. Custom Render Function
+
+```tsx
+<FacebookLogin
+  appId="1088597931155576"
+  render={({ onSuccess, onProfileSuccess, onFail, onClick }) => (
+    <CustonComponent
+      onSuccess={onSuccess}
+      onProfileSuccess={onProfileSuccess}
+      onFail={onFail}
+      onClick={onClick}
+    />
+  )}
+/>
+```
+
+### 2.3. Custom Params, Options
+
+Check all available options in [params.md](https://github.com/greatSumini/react-facebook-login/blob/master/docs/params.md)
+
+```tsx
+<FacebookLogin
+  appId="1088597931155576"
+  useRedirect
+  initParams={{
+    version: 'v10.0',
+    xfbml: true,
+  }}
+  dialogParams={{
+    response_type: 'token',
+  }}
+  loginOptions={{
+    return_scopes: true,
+  }}
+/>
+```
+
+## 3. Props
 
 | Property         | Description                                                                                                                     | Type          | Default                                                                                             |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------- |
@@ -65,7 +122,7 @@ import FacebookLogin from '@greatsumini/react-facebook-login';
 | dialogParams     | params for login dialog ([docs](https://github.com/greatSumini/react-facebook-login/blob/master/docs/params.md#2-dialogparams)) | DialogParams  | [docs](https://github.com/greatSumini/react-facebook-login/blob/master/docs/params.md#1-initparams) |
 | loginOptions     | options for FB.login ([docs](https://github.com/greatSumini/react-facebook-login/blob/master/docs/params.md#3-loginoptions))    | LoginOptions  | [docs](https://github.com/greatSumini/react-facebook-login/blob/master/docs/params.md#1-initparams) |
 
-## Links
+## 4. Links
 
 - [NPM](https://www.npmjs.com/package/@greatsumini/react-facebook-login)
 - [GitHub](https://github.com/greatSumini/react-facebook-login)
