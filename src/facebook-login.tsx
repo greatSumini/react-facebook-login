@@ -17,6 +17,7 @@ export default function FacebookLogin(props: FacebookLoginProps) {
     onSuccess,
     onFail,
     onProfileSuccess,
+    className,
     style,
     children = 'Login with Facebook',
     render,
@@ -122,7 +123,12 @@ export default function FacebookLogin(props: FacebookLoginProps) {
   }
 
   return (
-    <button type="button" onClick={handleButtonClick} style={style}>
+    <button
+      type="button"
+      onClick={handleButtonClick}
+      className={className}
+      style={style}
+    >
       {children}
     </button>
   );

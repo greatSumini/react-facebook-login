@@ -92,6 +92,8 @@ export type FacebookLoginProps = Pick<InitParams, 'appId'> & {
 
   onProfileSuccess?: (res: unknown) => void;
 
+  className?: string;
+
   style?: CSSProperties;
 
   /** Children Component
