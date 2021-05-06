@@ -2,6 +2,10 @@
 
 # Release Notes
 
+## 1.3.3
+
+- update FacebookLoginProps.children type (9835bac)
+
 ## 1.3.2
 
 - add className to FacebookLoginProps (b8f7b73)
