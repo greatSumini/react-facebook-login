@@ -1,4 +1,4 @@
-import { CSSProperties, ReactChild, ReactElement } from 'react';
+import { CSSProperties, ReactElement, ReactNode, ReactNodeArray } from 'react';
 
 import { LoginResponse } from './response';
 
@@ -98,7 +98,7 @@ export type FacebookLoginProps = Pick<InitParams, 'appId'> & {
 
   /** Children Component
    * @default "Login with Facebook" */
-  children?: ReactChild;
+  children?: ReactNode | ReactNodeArray;
 
   /** render custom component */
   render?: (
