@@ -123,6 +123,10 @@ Check all available options in [params.md](https://github.com/greatSumini/react-
 | dialogParams     | params for login dialog ([docs](https://github.com/greatSumini/react-facebook-login/blob/master/docs/params.md#2-dialogparams)) | DialogParams                | [docs](https://github.com/greatSumini/react-facebook-login/blob/master/docs/params.md#1-initparams) |
 | loginOptions     | options for FB.login ([docs](https://github.com/greatSumini/react-facebook-login/blob/master/docs/params.md#3-loginoptions))    | LoginOptions                | [docs](https://github.com/greatSumini/react-facebook-login/blob/master/docs/params.md#1-initparams) |
 
+## Author
+
+- [Sumin Choi](https://sumini.dev)
+
 ## 4. Links
 
 - [NPM](https://www.npmjs.com/package/@greatsumini/react-facebook-login)
