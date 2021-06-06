@@ -27,3 +27,4 @@ storybook-static/
 jest*
 *.stories.*
 CHANGELOG.md
+tsconfig.json
