@@ -7,7 +7,6 @@ import {
   LoginOptions,
   FacebookLoginProps,
 } from './types';
-import { objectToParams } from './helpers';
 
 export default function FacebookLogin(props: FacebookLoginProps) {
   const {
@@ -87,12 +86,7 @@ export default function FacebookLogin(props: FacebookLoginProps) {
 
   const handleButtonClick = () => {
     if (useRedirect) {
-      window.location.href = `https://www.facebook.com/dialog/oauth${objectToParams(
-        {
-          ...dialogParams,
-          ...loginOptions,
-        }
-      )}`;
+      FacebookClient.redirectToDialog(dialogParams, loginOptions);
       return;
     }
 

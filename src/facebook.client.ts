@@ -1,5 +1,5 @@
-import { createScriptEle, paramsToObject } from './helpers';
-import { InitParams } from './types';
+import { createScriptEle, objectToParams, paramsToObject } from './helpers';
+import { DialogParams, InitParams, LoginOptions } from './types';
 
 export const FacebookClient = {
   init(initParams: InitParams, callback?: () => void) {
@@ -21,5 +21,13 @@ export const FacebookClient = {
       'facebook-jssdk',
       `https://connect.facebook.net/${language}/sdk.js`
     );
+  },
+  redirectToDialog(dialogParams: DialogParams, loginOptions: LoginOptions) {
+    window.location.href = `https://www.facebook.com/dialog/oauth${objectToParams(
+      {
+        ...dialogParams,
+        ...loginOptions,
+      }
+    )}`;
   },
 };
