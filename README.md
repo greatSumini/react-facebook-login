@@ -9,8 +9,8 @@
 
 > Well-Typed React Component for Facebook Login
 
-[한글 가이드](https://sumini.dev/guide/016-react-facebook-login/)<br>
-This project aims to replace [react-facebook-login](https://github.com/keppelen/react-facebook-login).
+[한글 가이드](https://sumini.dev/guide/016-react-facebook-login/), [Live Demo](https://sumini.dev/react-facebook-login)<br>
+This project aims to improve [react-facebook-login](https://github.com/keppelen/react-facebook-login).
 
 - 💙 Typescript support
 - 📦 5kb mini library
@@ -132,3 +132,4 @@ Check all available options in [params.md](https://github.com/greatSumini/react-
 - [NPM](https://www.npmjs.com/package/@greatsumini/react-facebook-login)
 - [GitHub](https://github.com/greatSumini/react-facebook-login)
 - [Storybook](https://sumini.dev/react-facebook-login)
+- [(Official) Facebook Login Guide](https://developers.facebook.com/docs/facebook-login/web)
