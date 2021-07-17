@@ -42,4 +42,11 @@ export const FacebookClient = {
   login(callback: (res: LoginResponse) => void, loginOptions: LoginOptions) {
     window.FB.login(callback, loginOptions);
   },
+  logout(callback = () => null) {
+    this.getLoginStatus((res) => {
+      if (res.status === 'connected') {
+        window.FB.logout(callback);
+      }
+    });
+  },
 };

@@ -14,6 +14,8 @@ export interface FB {
     options?: LoginOptions
   ) => void;
 
+  logout: (callback: (res: unknown) => void) => void;
+
   api: (
     path: string,
     params: { fields: string },
