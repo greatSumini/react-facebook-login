@@ -104,26 +104,26 @@ Check all available options in [params.md](https://github.com/greatSumini/react-
 />
 ```
 
-## 3. FacebookClient
+## 3. FacebookLoginClient
 
-You can manually call facebook sdk related functions with FacebookClient
+You can manually call facebook sdk related functions with FacebookLoginClient
 
 ```tsx
-import { FacebookClient } from '@greatsumini/react-facebook-login';
+import { FacebookLoginClient } from '@greatsumini/react-facebook-login';
 
-FacebookClient.getLoginStatus((res) => {
+FacebookLoginClient.getLoginStatus((res) => {
   console.log(res.status);
 });
 
-FacebookClient.login((res) => {
+FacebookLoginClient.login((res) => {
   console.log(res);
 });
 
-FacebookClient.getProfile((res) => {
+FacebookLoginClient.getProfile((res) => {
   console.log(res.id, res.name, res.email);
 });
 
-FacebookClient.logout(() => {
+FacebookLoginClient.logout(() => {
   console.log('logout completed!');
 });
 ```

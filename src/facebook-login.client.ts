@@ -1,7 +1,7 @@
 import { createScriptEle, objectToParams, paramsToObject } from './helpers';
 import { DialogParams, InitParams, LoginOptions, LoginResponse } from './types';
 
-export const FacebookClient = {
+export const FacebookLoginClient = {
   getLoginStatus(
     callback: (res: LoginResponse) => void,
     isForcingRoudtrip = false

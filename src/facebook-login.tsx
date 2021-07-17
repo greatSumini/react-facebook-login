@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { FacebookClient } from './facebook.client';
+import { FacebookLoginClient } from './facebook-login.client';
 import {
   DialogParams,
   InitParams,
@@ -53,9 +53,9 @@ export default function FacebookLogin(props: FacebookLoginProps) {
   }, []);
 
   const init = async () => {
-    await FacebookClient.loadSdk(language);
-    FacebookClient.init(() => {
-      const isRedirected = FacebookClient.isRedirected();
+    await FacebookLoginClient.loadSdk(language);
+    FacebookLoginClient.init(() => {
+      const isRedirected = FacebookLoginClient.isRedirected();
       if (isRedirected === false && autoLoad) {
         handleButtonClick();
         return;
@@ -67,7 +67,7 @@ export default function FacebookLogin(props: FacebookLoginProps) {
   };
 
   const requestLogin = () => {
-    FacebookClient.login(
+    FacebookLoginClient.login(
       (res) => {
         if (!res.authResponse) {
           onFail && onFail({ status: 'loginCancelled' });
@@ -77,7 +77,7 @@ export default function FacebookLogin(props: FacebookLoginProps) {
         onSuccess && onSuccess(res.authResponse);
 
         if (onProfileSuccess) {
-          FacebookClient.getProfile(onProfileSuccess, { fields });
+          FacebookLoginClient.getProfile(onProfileSuccess, { fields });
         }
       },
       { ...loginOptions, scope }
@@ -86,7 +86,7 @@ export default function FacebookLogin(props: FacebookLoginProps) {
 
   const handleButtonClick = () => {
     if (useRedirect) {
-      FacebookClient.redirectToDialog(dialogParams, loginOptions);
+      FacebookLoginClient.redirectToDialog(dialogParams, loginOptions);
       return;
     }
 
@@ -104,7 +104,7 @@ export default function FacebookLogin(props: FacebookLoginProps) {
       onFail,
       onProfileSuccess,
       onClick: handleButtonClick,
-      logout: FacebookClient.logout,
+      logout: FacebookLoginClient.logout,
     });
   }
 
