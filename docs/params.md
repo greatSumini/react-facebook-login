@@ -24,3 +24,4 @@
 | auth_type     | supports 3 values: rerequest, reauthenticate, reauthorize.                                                              | string  | ''          |
 | scope         | Comma seperated list of permissions for login.                                                                          | string  | props.scope |
 | return_scopes | When true, the granted scopes will be returned in a comma-separated list in the grantedScopes field of the authResponse | boolean | false       |
+| auth_nonce    | This value enables your app to determine whether a user has been re-authenticated.                                      | string  | -           |
