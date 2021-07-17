@@ -71,12 +71,13 @@ import FacebookLogin from '@greatsumini/react-facebook-login';
 ```tsx
 <FacebookLogin
   appId="1088597931155576"
-  render={({ onSuccess, onProfileSuccess, onFail, onClick }) => (
+  render={({ onSuccess, onProfileSuccess, onFail, onClick, logout }) => (
     <CustonComponent
       onSuccess={onSuccess}
       onProfileSuccess={onProfileSuccess}
       onFail={onFail}
       onClick={onClick}
+      onLogoutClick={logout}
     />
   )}
 />
@@ -103,7 +104,31 @@ Check all available options in [params.md](https://github.com/greatSumini/react-
 />
 ```
 
-## 3. Props
+## 3. FacebookClient
+
+You can manually call facebook sdk related functions with FacebookClient
+
+```tsx
+import { FacebookClient } from '@greatsumini/react-facebook-login';
+
+FacebookClient.getLoginStatus((res) => {
+  console.log(res.status);
+});
+
+FacebookClient.login((res) => {
+  console.log(res);
+});
+
+FacebookClient.getProfile((res) => {
+  console.log(res.id, res.name, res.email);
+});
+
+FacebookClient.logout(() => {
+  console.log('logout completed!');
+});
+```
+
+## 4. Props
 
 | Property         | Description                                                                                                                     | Type                        | Default                                                                                             |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------- | --------------------------------------------------------------------------------------------------- |
@@ -123,11 +148,11 @@ Check all available options in [params.md](https://github.com/greatSumini/react-
 | dialogParams     | params for login dialog ([docs](https://github.com/greatSumini/react-facebook-login/blob/master/docs/params.md#2-dialogparams)) | DialogParams                | [docs](https://github.com/greatSumini/react-facebook-login/blob/master/docs/params.md#1-initparams) |
 | loginOptions     | options for FB.login ([docs](https://github.com/greatSumini/react-facebook-login/blob/master/docs/params.md#3-loginoptions))    | LoginOptions                | [docs](https://github.com/greatSumini/react-facebook-login/blob/master/docs/params.md#1-initparams) |
 
-## Author
+## 5. Author
 
 - [Sumin Choi](https://sumini.dev)
 
-## 4. Links
+## 6. Links
 
 - [NPM](https://www.npmjs.com/package/@greatsumini/react-facebook-login)
 - [GitHub](https://github.com/greatSumini/react-facebook-login)
