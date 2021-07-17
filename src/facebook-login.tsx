@@ -7,7 +7,7 @@ import {
   LoginOptions,
   FacebookLoginProps,
 } from './types';
-import { objectToParams, paramsToObject } from './helpers';
+import { objectToParams } from './helpers';
 
 export default function FacebookLogin(props: FacebookLoginProps) {
   const {
@@ -53,28 +53,18 @@ export default function FacebookLogin(props: FacebookLoginProps) {
     init();
   }, []);
 
-  const checkIsRedirectedFromFb = () => {
-    const params = paramsToObject(window.location.search);
-
-    return (
-      params['state'] === 'facebookdirect' &&
-      (params['code'] || params['granted_scopes'])
-    );
-  };
-
   const init = async () => {
     await FacebookClient.loadSdk(language);
-
-    window.fbAsyncInit = () => {
-      window.FB.init(initParams);
-      if (autoLoad && !checkIsRedirectedFromFb()) {
+    FacebookClient.init(initParams, () => {
+      const isRedirected = FacebookClient.isRedirected();
+      if (autoLoad && !isRedirected) {
         handleButtonClick();
         return;
       }
-      if (checkIsRedirectedFromFb() && useRedirect) {
+      if (isRedirected && useRedirect) {
         requestLogin();
       }
-    };
+    });
   };
 
   const requestLogin = () => {
