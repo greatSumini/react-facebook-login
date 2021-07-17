@@ -2,6 +2,25 @@
 
 # Release Notes
 
+## 2.0.0
+
+- add FacebookClient
+
+  you can use facebook sdk functions diretly with FacebookClient <br>
+  supports: getLoginStatus, getProfile, login, logout
+
+- refactor directory structure (6fc3f07)
+
+  /utils -> /helpers
+
+## 1.3.5
+
+- upgrade dependencies (322bec3)
+
+## 1.3.4
+
+- ignore tsconfig.json (791db2f)
+
 ## 1.3.3
 
 - update FacebookLoginProps.children type (9835bac)
