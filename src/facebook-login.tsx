@@ -54,7 +54,7 @@ export default function FacebookLogin(props: FacebookLoginProps) {
 
   const init = async () => {
     await FacebookClient.loadSdk(language);
-    FacebookClient.init(initParams, () => {
+    FacebookClient.init(() => {
       const isRedirected = FacebookClient.isRedirected();
       if (autoLoad && !isRedirected) {
         handleButtonClick();
@@ -63,11 +63,11 @@ export default function FacebookLogin(props: FacebookLoginProps) {
       if (isRedirected && useRedirect) {
         requestLogin();
       }
-    });
+    }, initParams);
   };
 
   const requestLogin = () => {
-    window.FB.login(
+    FacebookClient.login(
       (res) => {
         if (!res.authResponse) {
           onFail && onFail({ status: 'loginCancelled' });
@@ -77,7 +77,7 @@ export default function FacebookLogin(props: FacebookLoginProps) {
         onSuccess && onSuccess(res.authResponse);
 
         if (onProfileSuccess) {
-          window.FB.api('me', { fields }, onProfileSuccess);
+          FacebookClient.getProfile(onProfileSuccess, { fields });
         }
       },
       { ...loginOptions, scope }

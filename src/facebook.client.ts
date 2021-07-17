@@ -1,11 +1,14 @@
 import { createScriptEle, objectToParams, paramsToObject } from './helpers';
-import { DialogParams, InitParams, LoginOptions } from './types';
+import { DialogParams, InitParams, LoginOptions, LoginResponse } from './types';
 
 export const FacebookClient = {
-  init(initParams: InitParams, callback?: () => void) {
+  getProfile(callback: (res: unknown) => void, params: { fields: string }) {
+    window.FB.api('me', params, callback);
+  },
+  init(callback: () => void, initParams: InitParams) {
     window.fbAsyncInit = () => {
       window.FB.init(initParams);
-      callback && callback();
+      callback();
     };
   },
   isRedirected(): boolean {
@@ -29,5 +32,8 @@ export const FacebookClient = {
         ...loginOptions,
       }
     )}`;
+  },
+  login(callback: (res: LoginResponse) => void, loginOptions: LoginOptions) {
+    window.FB.login(callback, loginOptions);
   },
 };
