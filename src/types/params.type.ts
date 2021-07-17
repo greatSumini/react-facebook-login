@@ -1,4 +1,5 @@
 import { CSSProperties, ReactElement, ReactNode, ReactNodeArray } from 'react';
+import { FB } from './fb.type';
 
 import { LoginResponse } from './response.type';
 
@@ -107,6 +108,7 @@ export type FacebookLoginProps = Pick<InitParams, 'appId'> & {
       'onSuccess' | 'onProfileSuccess' | 'onFail'
     > & {
       onClick?: () => void;
+      logout?: FB['logout'];
     }
   ) => ReactElement;
 

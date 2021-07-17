@@ -56,11 +56,11 @@ export default function FacebookLogin(props: FacebookLoginProps) {
     await FacebookClient.loadSdk(language);
     FacebookClient.init(() => {
       const isRedirected = FacebookClient.isRedirected();
-      if (autoLoad && !isRedirected) {
+      if (isRedirected === false && autoLoad) {
         handleButtonClick();
         return;
       }
-      if (isRedirected && useRedirect) {
+      if (isRedirected === true && useRedirect) {
         requestLogin();
       }
     }, initParams);
@@ -104,6 +104,7 @@ export default function FacebookLogin(props: FacebookLoginProps) {
       onFail,
       onProfileSuccess,
       onClick: handleButtonClick,
+      logout: FacebookClient.logout,
     });
   }
 
