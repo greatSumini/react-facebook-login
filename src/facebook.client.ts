@@ -2,6 +2,12 @@ import { createScriptEle, objectToParams, paramsToObject } from './helpers';
 import { DialogParams, InitParams, LoginOptions, LoginResponse } from './types';
 
 export const FacebookClient = {
+  getLoginStatus(
+    callback: (res: LoginResponse) => void,
+    isForcingRoudtrip = false
+  ) {
+    window.FB.getLoginStatus(callback, isForcingRoudtrip);
+  },
   getProfile(callback: (res: unknown) => void, params: { fields: string }) {
     window.FB.api('me', params, callback);
   },
