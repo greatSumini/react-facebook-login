@@ -2,6 +2,10 @@
 
 # Release Notes
 
+## 2.1.0
+
+- rename FacebookClient -> FacebookLoginClient
+
 ## 2.0.0
 
 - add FacebookClient
