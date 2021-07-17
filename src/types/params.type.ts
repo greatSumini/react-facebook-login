@@ -1,6 +1,6 @@
 import { CSSProperties, ReactElement, ReactNode, ReactNodeArray } from 'react';
 
-import { LoginResponse } from './response';
+import { LoginResponse } from './response.type';
 
 export type InitParams = {
   /** Your application ID. */

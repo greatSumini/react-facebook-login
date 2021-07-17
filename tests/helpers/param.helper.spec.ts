@@ -1,4 +1,4 @@
-import { isObject, objectToParams, paramsToObject } from '../../src/utils';
+import { isObject, objectToParams, paramsToObject } from '../../src/helpers';
 
 describe('isObject', () => {
   test('String', () => {

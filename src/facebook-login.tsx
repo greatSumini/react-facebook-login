@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 
+import { FacebookClient } from './facebook.client';
 import {
   DialogParams,
   InitParams,
   LoginOptions,
   FacebookLoginProps,
 } from './types';
-import { loadFacebookSdk, objectToParams, paramsToObject } from './utils';
+import { objectToParams, paramsToObject } from './helpers';
 
 export default function FacebookLogin(props: FacebookLoginProps) {
   const {
@@ -62,7 +63,7 @@ export default function FacebookLogin(props: FacebookLoginProps) {
   };
 
   const init = async () => {
-    await loadFacebookSdk(language);
+    await FacebookClient.loadSdk(language);
 
     window.fbAsyncInit = () => {
       window.FB.init(initParams);

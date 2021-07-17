@@ -1,4 +1,4 @@
-import { FB } from './fb';
+import { FB } from './fb.type';
 export {};
 
 declare global {

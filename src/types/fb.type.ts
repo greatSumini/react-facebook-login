@@ -1,5 +1,5 @@
-import { InitParams, LoginOptions } from './params';
-import { LoginResponse } from './response';
+import { InitParams, LoginOptions } from './params.type';
+import { LoginResponse } from './response.type';
 
 export interface FB {
   init: (params: InitParams) => void;

@@ -1,3 +1,3 @@
-export * from './fb';
-export * from './params';
-export * from './response';
+export * from './fb.type';
+export * from './params.type';
+export * from './response.type';
