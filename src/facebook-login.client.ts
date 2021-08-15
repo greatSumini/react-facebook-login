@@ -2,6 +2,13 @@ import { createScriptEle, objectToParams, paramsToObject } from './helpers';
 import { DialogParams, InitParams, LoginOptions, LoginResponse } from './types';
 
 export const FacebookLoginClient = {
+  getFB: () => {
+    if (!window.FB) {
+      console.warn('FB not found');
+      return;
+    }
+    return window.FB;
+  },
   getLoginStatus(
     callback: (res: LoginResponse) => void,
     isForcingRoudtrip = false
@@ -9,11 +16,11 @@ export const FacebookLoginClient = {
     window.FB.getLoginStatus(callback, isForcingRoudtrip);
   },
   getProfile(callback: (res: unknown) => void, params: { fields: string }) {
-    window.FB.api('me', params, callback);
+    this.getFB()?.api('me', params, callback);
   },
   init(callback: () => void, initParams: InitParams) {
     window.fbAsyncInit = () => {
-      window.FB.init(initParams);
+      this.getFB()?.init(initParams);
       callback();
     };
   },
@@ -40,7 +47,7 @@ export const FacebookLoginClient = {
     )}`;
   },
   login(callback: (res: LoginResponse) => void, loginOptions: LoginOptions) {
-    window.FB.login(callback, loginOptions);
+    this.getFB()?.login(callback, loginOptions);
   },
   logout(callback: (res: unknown) => void) {
     this.getLoginStatus((res) => {
