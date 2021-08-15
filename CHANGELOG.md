@@ -2,6 +2,13 @@
 
 # Release Notes
 
+## 2.1.1
+
+- feat: :label: add LoginOptions.auth_nonce
+- feat(client): :sparkles: add FacebookLoginClient.getFB
+- enhance(client): update getLoginStatus to call callback when window.FB is not found
+- enhance(client): update logout to call callback when loginStatus is not "connected"
+
 ## 2.1.0
 
 - rename FacebookClient -> FacebookLoginClient
