@@ -1,5 +1,11 @@
 import { createScriptEle, objectToParams, paramsToObject } from './helpers';
-import { DialogParams, InitParams, LoginOptions, LoginResponse } from './types';
+import {
+  DialogParams,
+  InitParams,
+  LoginOptions,
+  LoginResponse,
+  LoginStatus,
+} from './types';
 
 export const FacebookLoginClient = {
   getFB: () => {
@@ -13,7 +19,14 @@ export const FacebookLoginClient = {
     callback: (res: LoginResponse) => void,
     isForcingRoudtrip = false
   ) {
-    window.FB.getLoginStatus(callback, isForcingRoudtrip);
+    const FB = this.getFB();
+
+    if (!FB) {
+      callback({ status: 'unknown' as LoginStatus });
+      return;
+    }
+
+    FB.getLoginStatus(callback, isForcingRoudtrip);
   },
   getProfile(callback: (res: unknown) => void, params: { fields: string }) {
     this.getFB()?.api('me', params, callback);
