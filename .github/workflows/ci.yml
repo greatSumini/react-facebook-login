@@ -42,9 +42,6 @@ jobs:
           steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm install
 
-      - name: Format check
-        run: npm run format
-
       - name: Lint check
         run: npm run lint
 

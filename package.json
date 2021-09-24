@@ -11,13 +11,12 @@
   "description": "Well-typed React Component for Facebook Login",
   "main": "dist/index.js",
   "scripts": {
-    "format": "prettier --write **/*.{ts,tsx} --ignore-path ./.prettierignore",
     "lint": "eslint \"src/**/*.{ts,tsx}\" --fix",
     "test": "jest",
     "test:watch": "jest --watch",
     "coverage": "jest --coverage",
     "build": "rimraf -rf dist && tsc -p tsconfig.json",
-    "prepublish:npm": "npm run format && npm run lint && npm run test && npm run build",
+    "prepublish:npm": "npm run lint && npm run test && npm run build",
     "publish:npm": "npm publish --public",
     "build:storybook": "build-storybook",
     "storybook": "start-storybook -p 3000"
