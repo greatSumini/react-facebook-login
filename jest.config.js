@@ -1,4 +1,5 @@
 module.exports = {
+  testEnvironment: 'jsdom',
   moduleFileExtensions: ['js', 'json', 'ts', 'tsx', 'node'],
   rootDir: '.',
   testRegex: '.spec.tsx?$',
