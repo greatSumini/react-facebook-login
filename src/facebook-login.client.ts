@@ -45,10 +45,12 @@ export const FacebookLoginClient = {
       (params['code'] !== undefined || params['granted_scopes'] !== undefined)
     );
   },
-  async loadSdk(language: string) {
+  async loadSdk(language: string, useCustomerChat?: boolean) {
     await createScriptEle(
       'facebook-jssdk',
-      `https://connect.facebook.net/${language}/sdk.js`
+      `https://connect.facebook.net/${language}/sdk${
+        useCustomerChat ? '/xfbml.customerchat' : ''
+      }.js`
     );
   },
   redirectToDialog(dialogParams: DialogParams, loginOptions: LoginOptions) {

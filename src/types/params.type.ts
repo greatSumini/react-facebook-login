@@ -123,6 +123,10 @@ export type FacebookLoginProps = Pick<InitParams, 'appId'> & {
    * @default false */
   useRedirect?: boolean;
 
+  /** if true, append 'xfbml.customerchat' to sdk url (ex: 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js')
+   * @default false */
+  useCustomerChat?: boolean;
+
   initParams?: Omit<InitParams, 'appId'>;
 
   loginOptions?: Pick<LoginOptions, 'auth_type' | 'return_scopes'>;
