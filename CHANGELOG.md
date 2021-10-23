@@ -2,6 +2,27 @@
 
 # Release Notes
 
+## 2.1.2
+
+### Core
+
+- feat: :sparkles: add useCustomerChant prop
+
+  for who use Customer Chat plugin with Facebook login.
+  if true, append 'xfbml.customerchat' to sdk url (ex: 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js')
+  With this URL, you will still be able to access all of the Facebook Javascript SDK plus all features of the Customer Chat SDK.
+  (ref: https://developers.facebook.com/docs/messenger-platform/discovery/customer-chat-plugin/sdk/)
+
+  resolve #55
+  Special thanks to @akshatamohanty
+
+### Misc
+
+- chore: 🔧 update .npmrc
+- chore: 🔥 remove format script
+- test: 🔧 set jest.config.testEnvironment as 'jsdom'
+- update dependencies (by @renovate-bot)
+
 ## 2.1.1
 
 - feat: :label: add LoginOptions.auth_nonce
