@@ -2,6 +2,14 @@
 
 # Release Notes
 
+## 2.1.3
+
+### Core
+
+- enhance(client): update FacebookLoginClient.isRedirected verify logic
+  fix #4
+  Special thanks to @tabishmahfuz1
+
 ## 2.1.2
 
 ### Core
