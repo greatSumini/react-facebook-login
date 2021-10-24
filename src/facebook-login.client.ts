@@ -37,12 +37,12 @@ export const FacebookLoginClient = {
       callback();
     };
   },
-  isRedirected(): boolean {
+  isRedirected(dialogParams?: DialogParams): boolean {
     const params = paramsToObject(window.location.search);
 
     return (
-      params['state'] === 'facebookdirect' &&
-      (params['code'] !== undefined || params['granted_scopes'] !== undefined)
+      (params['state'] === dialogParams?.state ?? 'facebookdirect') &&
+      params[dialogParams?.response_type ?? ''] !== undefined
     );
   },
   async loadSdk(language: string, useCustomerChat?: boolean) {

@@ -56,7 +56,7 @@ export default function FacebookLogin(props: FacebookLoginProps) {
   const init = async () => {
     await FacebookLoginClient.loadSdk(language, useCustomerChat);
     FacebookLoginClient.init(() => {
-      const isRedirected = FacebookLoginClient.isRedirected();
+      const isRedirected = FacebookLoginClient.isRedirected(dialogParams);
       if (isRedirected === false && autoLoad) {
         handleButtonClick();
         return;
