@@ -13,7 +13,7 @@
 This project aims to improve [react-facebook-login](https://github.com/keppelen/react-facebook-login).
 
 - 💙 Typescript support
-- 📦 5kb mini library
+- 📦 6kb mini library
 - 👫 All browsers supported
 - 🏃 Currently maintaining
 
