@@ -24,6 +24,10 @@ export const paramsToObject = (params: string): Record<string, string> =>
     ?.replace(/^\?/, '')
     .split('&')
     .reduce((acc, chunk) => {
+      if (!chunk) {
+        return acc;
+      }
+
       const [key, value] = chunk.split('=');
-      return { ...acc, [key]: value };
+      return { ...acc, [key]: decodeURIComponent(value) };
     }, {}) || {};

@@ -60,5 +60,9 @@ describe('paramsToObject', () => {
 
     expect(paramsToObject('a=b&c=3')).toEqual({ a: 'b', c: '3' });
     expect(paramsToObject('a=3&c=true')).toEqual({ a: '3', c: 'true' });
+
+    expect(paramsToObject('state={st%3Dstate123abc%2Cds%3D123456789}')).toEqual(
+      { state: '{st=state123abc,ds=123456789}' }
+    );
   });
 });
