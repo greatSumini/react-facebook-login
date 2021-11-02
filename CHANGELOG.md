@@ -7,6 +7,7 @@
 ### Core
 
 - enhance(client): update FacebookLoginClient.isRedirected verify logic
+
   fix #4
   Special thanks to @tabishmahfuz1
 
