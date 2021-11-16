@@ -4,7 +4,7 @@ import FacebookLogin from './facebook-login';
 const appId = '1088597931155576';
 
 export default {
-  title: 'FacebookLogin',
+  title: 'Usages',
   component: FacebookLogin,
 };
 
