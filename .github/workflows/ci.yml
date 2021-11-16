@@ -42,8 +42,5 @@ jobs:
           steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm install
 
-      - name: Lint check
-        run: npm run lint
-
-      - name: Unit test
-        run: npm run test
+      - name: Run all checks
+        run: npm run check
