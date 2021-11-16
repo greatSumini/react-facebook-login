@@ -46,26 +46,9 @@ import FacebookLogin from '@greatsumini/react-facebook-login';
 />;
 ```
 
-### 3. Params, Options
+## 3. Props
 
-Check all available params/options in [params.md](https://sumini.dev/react-facebook-login/?path=/story/api-references-params--page)
-
-```tsx
-<FacebookLogin
-  appId="1088597931155576"
-  useRedirect
-  initParams={{
-    version: 'v10.0',
-    xfbml: true,
-  }}
-  dialogParams={{
-    response_type: 'token',
-  }}
-  loginOptions={{
-    return_scopes: true,
-  }}
-/>
-```
+Check all available props [here](https://sumini.dev/react-facebook-login/?path=/story/api-references-props--page)!
 
 ## 4. FacebookLoginClient
 
@@ -91,32 +74,11 @@ FacebookLoginClient.logout(() => {
 });
 ```
 
-## 5. Props
-
-| Property         | Description                                                                                                                       | Type                        | Default                                                                                                 |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------------------------- |
-| appId \*         | Your application ID.                                                                                                              | string                      | -                                                                                                       |
-| language         | API version                                                                                                                       | string                      | 'en_US'                                                                                                 |
-| scope            | Comma seperated list of permissions for login.                                                                                    | string                      | 'public_profile, email'                                                                                 |
-| fields           | fields return by /me (profile)                                                                                                    | string                      | 'name,email,picture'                                                                                    |
-| onSuccess        |                                                                                                                                   | function                    | -                                                                                                       |
-| onFail           |                                                                                                                                   | function                    | -                                                                                                       |
-| onProfileSuccess |                                                                                                                                   | function                    | -                                                                                                       |
-| style            | css properties for login button                                                                                                   | CSSProperties               | -                                                                                                       |
-| children         | Children Component                                                                                                                | ReactNode \| ReactNodeArray | "Login with Facebook"                                                                                   |
-| render           | Callback which render custom component                                                                                            | function                    | -                                                                                                       |
-| autoLoad         | if true, request login on mount                                                                                                   | boolean                     | false                                                                                                   |
-| useRedirect      | if true, use redirect instead of window.FB.login                                                                                  | boolean                     | false                                                                                                   |
-| useCustomChat    | if true, append 'xfbml.customerchat' to sdk url                                                                                   | boolean                     | false                                                                                                   |
-| initParams       | params for FB.init ([docs](https://sumini.dev/react-facebook-login/?path=/story/api-references-params--page#1-initparams))        | InitParams                  | [docs](https://github.com/greatSumini/react-facebook-login/blob/master/docs/params.md#1-initparams)     |
-| dialogParams     | params for login dialog ([docs](https://sumini.dev/react-facebook-login/?path=/story/api-references-params--page#2-dialogparams)) | DialogParams                | [docs](https://sumini.dev/react-facebook-login/?path=/story/api-references-params--page#2-dialogparams) |
-| loginOptions     | options for FB.login ([docs](https://sumini.dev/react-facebook-login/?path=/story/api-references-params--page#3-loginoptions))    | LoginOptions                | [docs]((https://sumini.dev/react-facebook-login/?path=/story/api-references-params--page#1-initparams)  |
-
-## 6. Author
+## 5. Author
 
 - [Sumin Choi](https://sumini.dev)
 
-## 7. Links
+## 6. Links
 
 - [Guide](https://sumini.dev/react-facebook-login)
 - [NPM](https://www.npmjs.com/package/@greatsumini/react-facebook-login)
