@@ -9,7 +9,7 @@
 
 > Well-Typed React Component for Facebook Login
 
-[English Guide](https://sumini.dev/react-facebook-login), [한글 가이드](https://sumini.dev/guide/016-react-facebook-login/)<br/>
+[한글 가이드](https://sumini.dev/guide/016-react-facebook-login/)<br/>
 This project aims to improve [react-facebook-login](https://github.com/keppelen/react-facebook-login).
 
 - 💙 Typescript support
@@ -17,70 +17,20 @@ This project aims to improve [react-facebook-login](https://github.com/keppelen/
 - 👫 All browsers supported
 - 🏃 Currently maintaining
 
-## 1. Getting Started
+## Documentation
 
-```shell
-npm i --save @greatsumini/react-facebook-login
-# or
-yarn add @greatsumini/react-facebook-login
-```
+Check out [https://sumini.dev/react-facebook-login](https://sumini.dev/react-facebook-login)
 
-## 2. Usage
+## Stay in touch
 
-Check all usages [here](https://sumini.dev/react-facebook-login/?path=/story/usages--default)
+- Author - [Sumin Choi](https://sumini.dev)
 
-```tsx
-import FacebookLogin from '@greatsumini/react-facebook-login';
+## License
 
-<FacebookLogin
-  appId="1088597931155576"
-  onSuccess={(response) => {
-    console.log('Login Success!', response);
-  }}
-  onFail={(error) => {
-    console.log('Login Failed!', error);
-  }}
-  onProfileSuccess={(response) => {
-    console.log('Get Profile Success!', response);
-  }}
-/>;
-```
+React Facebook Login is [MIT licensed](./LICENSE).
 
-## 3. Props
+## Links
 
-Check all available props [here](https://sumini.dev/react-facebook-login/?path=/story/api-references-props--page)!
-
-## 4. FacebookLoginClient
-
-You can manually call facebook sdk related functions with FacebookLoginClient
-
-```tsx
-import { FacebookLoginClient } from '@greatsumini/react-facebook-login';
-
-FacebookLoginClient.getLoginStatus((res) => {
-  console.log(res.status);
-});
-
-FacebookLoginClient.login((res) => {
-  console.log(res);
-});
-
-FacebookLoginClient.getProfile((res) => {
-  console.log(res.id, res.name, res.email);
-});
-
-FacebookLoginClient.logout(() => {
-  console.log('logout completed!');
-});
-```
-
-## 5. Author
-
-- [Sumin Choi](https://sumini.dev)
-
-## 6. Links
-
-- [Guide](https://sumini.dev/react-facebook-login)
 - [NPM](https://www.npmjs.com/package/@greatsumini/react-facebook-login)
 - [GitHub](https://github.com/greatSumini/react-facebook-login)
 - [(Official) Facebook Login Guide](https://developers.facebook.com/docs/facebook-login/web)
