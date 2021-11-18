@@ -28,3 +28,4 @@ jest*
 *.stories.*
 CHANGELOG.md
 tsconfig.json
+renovate.json
