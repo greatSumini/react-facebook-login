@@ -2,6 +2,15 @@
 
 # Release Notes
 
+## 2.1.5
+
+### Core
+
+- fix: 🔨 update prepublish script
+
+  add missing build command
+  Special thanks to @john-dupuy
+
 ## 2.1.4
 
 ### Core
