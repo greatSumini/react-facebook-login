@@ -2,6 +2,18 @@
 
 # Release Notes
 
+## 2.1.4
+
+### Core
+
+- fix: 🐛 add decodeURIComponent to paramsToObject helper
+- update dependencies (by @renovate-bot)
+
+### Misc
+
+- update README
+- add storybook mdx files
+
 ## 2.1.3
 
 ### Core
