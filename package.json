@@ -18,7 +18,7 @@
     "test:watch": "jest --watch",
     "coverage": "jest --coverage",
     "build": "rimraf -rf dist && tsc -p tsconfig.json",
-    "prepublish:npm": "npm run check",
+    "prepublish:npm": "npm run check && npm run build",
     "publish:npm": "npm publish --public",
     "build:storybook": "build-storybook",
     "storybook": "start-storybook -p 3000"
