@@ -101,9 +101,6 @@ export default function FacebookLogin(props: FacebookLoginProps) {
 
   if (render) {
     return render({
-      onSuccess,
-      onFail,
-      onProfileSuccess,
       onClick: handleButtonClick,
       logout: FacebookLoginClient.logout,
     });

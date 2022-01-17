@@ -105,15 +105,10 @@ export type FacebookLoginProps = Pick<InitParams, 'appId'> & {
   children?: ReactNode | ReactNodeArray;
 
   /** render custom component */
-  render?: (
-    props: Pick<
-      FacebookLoginProps,
-      'onSuccess' | 'onProfileSuccess' | 'onFail'
-    > & {
-      onClick?: () => void;
-      logout?: FB['logout'];
-    }
-  ) => ReactElement;
+  render?: (props: {
+    onClick?: () => void;
+    logout?: FB['logout'];
+  }) => ReactElement;
 
   /** if true, request login on mount
    * @default false */
