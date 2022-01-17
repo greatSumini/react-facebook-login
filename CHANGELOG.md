@@ -2,6 +2,18 @@
 
 # Release Notes
 
+## 3.0.0
+
+### Core
+
+- fix: 🐛 exclude onSuccess,onFail,onProfileSuccess from render props
+- update dependencies (by @renovate-bot)
+
+### Misc
+
+- fix: 🐛 fix .storybook/main.js stories glob
+- chore: 🙈 add renovate.json to .npmignore
+
 ## 2.1.5
 
 ### Core
