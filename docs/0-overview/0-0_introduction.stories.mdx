@@ -76,14 +76,17 @@ import FacebookLogin from '@greatsumini/react-facebook-login';
 ```tsx
 <FacebookLogin
   appId="1088597931155576"
-  render={({ onSuccess, onProfileSuccess, onFail, onClick, logout }) => (
-    <CustonComponent
-      onSuccess={onSuccess}
-      onProfileSuccess={onProfileSuccess}
-      onFail={onFail}
-      onClick={onClick}
-      onLogoutClick={logout}
-    />
+  onSuccess={(response) => {
+    console.log('Login Success!', response);
+  }}
+  onFail={(error) => {
+    console.log('Login Failed!', error);
+  }}
+  onProfileSuccess={(response) => {
+    console.log('Get Profile Success!', response);
+  }}
+  render={({ onClick, logout }) => (
+    <CustonComponent onClick={onClick} onLogoutClick={logout} />
   )}
 />
 ```
