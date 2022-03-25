@@ -64,6 +64,6 @@
     "react-dom": "17.0.2",
     "rimraf": "3.0.2",
     "ts-jest": "27.1.4",
-    "typescript": "4.6.2"
+    "typescript": "4.6.3"
   }
 }
