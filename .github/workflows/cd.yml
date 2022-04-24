@@ -45,10 +45,9 @@ jobs:
       - name: Build storybook
         run: npm run build:storybook
 
-      - name: gh-page deploy
+      - name: Deploy 🚀
         if: matrix.node-version == '12.x'
-        uses: maxheld83/ghpages@v0.3.0
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          GH_PAT: ${{ secrets.GH_PAT }}
-          BUILD_DIR: 'storybook-static/'
+        uses: JamesIves/github-pages-deploy-action@v4.3.0
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: storybook-static # The folder the action should deploy.
