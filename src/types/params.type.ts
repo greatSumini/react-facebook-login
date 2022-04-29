@@ -53,8 +53,9 @@ export type DialogParams = {
 
 export type LoginOptions = {
   /** supports 3 values: rerequest, reauthenticate, reauthorize.
-   * @default '' */
-  auth_type?: string;
+   *
+   * Use 'rerequest' when re-requesting a declined permission. */
+  auth_type?: 'rerequest' | 'reauthenticate' | 'reauthorize';
 
   scope: string;
 
