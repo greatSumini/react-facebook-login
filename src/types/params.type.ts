@@ -60,9 +60,14 @@ export type LoginOptions = {
   scope: string;
 
   /** When true, the granted scopes will be returned in a comma-separated list in the grantedScopes field of the authResponse
-   * @default false
-   */
+   * @default false */
   return_scopes?: boolean;
+
+  /** When true, prompt the user to grant permission for one or more Pages */
+  enable_profile_selector?: boolean;
+
+  /** Comma separated list of IDs to display in the profile selector */
+  profile_selector_ids?: string;
 
   /** The auth_nonce parameter is intended to be a completely arbitrary alphanumeric code that your app generates. The process of generation and format of this code is entirely up to you. For example, a hashed version of a timestamp and a secret string may be sufficient, as long as it's completely unique to each Login attempt. This value enables your app to determine whether a user has been re-authenticated. */
   auth_nonce?: string | (() => string);
@@ -116,10 +121,7 @@ export type FacebookLoginProps = Pick<InitParams, 'appId'> & {
 
   initParams?: Omit<InitParams, 'appId'>;
 
-  loginOptions?: Pick<
-    LoginOptions,
-    'auth_type' | 'return_scopes' | 'auth_nonce'
-  >;
+  loginOptions?: Omit<LoginOptions, 'scope'>;
 
   dialogParams?: Pick<DialogParams, 'redirect_uri' | 'response_type' | 'state'>;
 };
