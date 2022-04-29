@@ -115,7 +115,10 @@ export type FacebookLoginProps = Pick<InitParams, 'appId'> & {
 
   initParams?: Omit<InitParams, 'appId'>;
 
-  loginOptions?: Pick<LoginOptions, 'auth_type' | 'return_scopes'>;
+  loginOptions?: Pick<
+    LoginOptions,
+    'auth_type' | 'return_scopes' | 'auth_nonce'
+  >;
 
   dialogParams?: Pick<DialogParams, 'redirect_uri' | 'response_type' | 'state'>;
 };
