@@ -46,6 +46,10 @@ export default function FacebookLogin(props: FacebookLoginProps) {
     auth_type: '',
     return_scopes: false,
     ...props.loginOptions,
+    auth_nonce:
+      typeof props.loginOptions?.auth_nonce === 'function'
+        ? props.loginOptions.auth_nonce()
+        : props.loginOptions?.auth_nonce,
     scope,
   };
 
