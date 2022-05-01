@@ -13,7 +13,7 @@ export const FacebookLoginClient = {
   getFB: () => {
     if (!window.FB) {
       console.warn('FB not found');
-      return;
+      return null;
     }
     return window.FB;
   },
@@ -33,11 +33,8 @@ export const FacebookLoginClient = {
   getProfile(callback: (res: unknown) => void, params: { fields: string }) {
     this.getFB()?.api('me', params, callback);
   },
-  init(callback: () => void, initParams: InitParams) {
-    window.fbAsyncInit = () => {
-      this.getFB()?.init(initParams);
-      callback();
-    };
+  init(initParams: InitParams) {
+    this.getFB()?.init(initParams);
   },
   clear() {
     window.FB = null;
