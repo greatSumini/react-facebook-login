@@ -7,6 +7,8 @@ import {
   LoginStatus,
 } from './types';
 
+export const SDK_SCRIPT_ELE_ID = 'facebook-jssdk';
+
 export const FacebookLoginClient = {
   getFB: () => {
     if (!window.FB) {
@@ -37,6 +39,13 @@ export const FacebookLoginClient = {
       callback();
     };
   },
+  clear() {
+    window.FB = null;
+    const scriptEle = document.getElementById(SDK_SCRIPT_ELE_ID);
+    if (scriptEle) {
+      scriptEle.remove();
+    }
+  },
   isRedirected(dialogParams?: DialogParams): boolean {
     const params = paramsToObject(window.location.search);
 
@@ -47,7 +56,7 @@ export const FacebookLoginClient = {
   },
   async loadSdk(language: string, useCustomerChat?: boolean) {
     await createScriptEle(
-      'facebook-jssdk',
+      SDK_SCRIPT_ELE_ID,
       `https://connect.facebook.net/${language}/sdk${
         useCustomerChat ? '/xfbml.customerchat' : ''
       }.js`
