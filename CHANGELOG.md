@@ -2,6 +2,49 @@
 
 # Release Notes
 
+## 3.2.0
+
+### Core
+
+- feat(): add frictionlessRequests,hideFlashCallback to InitParams
+
+- feat(): add FacebookLoginClient.clear
+
+- enhance(): update FacebookLoginClient.init
+
+  call window.FB.init directly (not use window.fbAsyncInit
+
+- docs(stories): add WithMultipleApp story
+
+## 3.1.0
+
+### Core
+
+- [feat(): add available versions](https://github.com/greatSumini/react-facebook-login/commit/8a486973e67fea94d4aea5f52ccd8c947eff2af3)
+
+  'v11.0', 'v12.0', 'v13.0'
+  resolves https://github.com/greatSumini/react-facebook-login/issues/190
+  Special Thanks to @jerryeechan
+
+- [enhance(): remove deprecated versions](https://github.com/greatSumini/react-facebook-login/commit/374189366e6f783e59716678d7760e442c6c602e)
+
+  'v3.2', 'v3.3', 'v4.0', 'v5.0', 'v6.0'
+
+- [feat(): add enable_profile_selector,profile_selector_ids to LoginOptions](https://github.com/greatSumini/react-facebook-login/commit/fc8e1a1d5850fdc77f3a5b72edbfc0a3c281fd09)
+- [enhance(): add auth_nonce to FacebookLoginProps.loginOptions](https://github.com/greatSumini/react-facebook-login/commit/3882448596b84bddc538aa78bef83b1283e7bc3d)
+- [feat(): allow passing funciton for LoginOptions.auth_nonce](https://github.com/greatSumini/react-facebook-login/commit/177ed880c3d9cf962f2a03a85038d37a893f0ff6)
+
+  resolves https://github.com/greatSumini/react-facebook-login/issues/56
+  Special Thanks to @Hamaad-Siddiqui
+
+- update dependencies (by @renovate-bot)
+
+### Misc
+
+- [enhance(): update LoginOptions.auth_type type declaration](https://github.com/greatSumini/react-facebook-login/commit/ad9bbdd4c7784822ad67abf770c4b90f2482de80)
+
+  string -> string literal
+
 ## 3.0.0
 
 ### Core
