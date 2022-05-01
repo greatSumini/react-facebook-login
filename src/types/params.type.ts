@@ -24,6 +24,15 @@ export type InitParams = {
   /** Determines whether XFBML tags used by social plugins are parsed, and therefore whether the plugins are rendered or not.
    * @default false */
   xfbml?: boolean;
+
+  /** Frictionless Requests are available to games on Facebook.com or on mobile web using the JavaScript SDK. This parameter determines whether they are enabled.
+   * @default false */
+  frictionlessRequests?: boolean;
+
+  /** This specifies a function that is called whenever it is necessary to hide Adobe Flash objects on a page. This is used when .api() requests are made, as Flash objects will always have a higher z-index than any other DOM element.
+   *
+   * @link https://developers.facebook.com/docs/games/gamesonfacebook/optimizing#handlingpopups */
+  hideFlashCallback?: () => void;
 };
 
 export type DialogParams = {
