@@ -37,7 +37,7 @@
     "react": "^16.0.0 || ^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.18.0",
+    "@babel/core": "7.18.2",
     "@storybook/addon-actions": "6.5.5",
     "@storybook/addon-docs": "6.5.5",
     "@storybook/addon-essentials": "6.5.5",
