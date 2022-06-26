@@ -47,7 +47,7 @@ jobs:
 
       - name: Deploy 🚀
         if: matrix.node-version == '12.x'
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        uses: JamesIves/github-pages-deploy-action@v4.3.4
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: storybook-static # The folder the action should deploy.
