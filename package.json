@@ -19,9 +19,7 @@
     "coverage": "jest --coverage",
     "build": "rimraf -rf dist && tsc -p tsconfig.json",
     "prepublish:npm": "npm run check && npm run build",
-    "publish:npm": "npm publish --public",
-    "build:storybook": "build-storybook",
-    "storybook": "start-storybook -p 3000"
+    "publish:npm": "npm publish --public"
   },
   "author": "greatSumini <greatSumini@gmail.com> (https://sumini.dev)",
   "license": "MIT",
@@ -32,20 +30,13 @@
   "bugs": {
     "url": "https://github.com/greatSumini/react-facebook-login/issues"
   },
-  "homepage": "https://sumini.dev/react-facebook-login",
+  "homepage": "https://github.com/greatSumini/react-facebook-login",
   "peerDependencies": {
     "react": "^16.0.0 || ^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.18.9",
     "@mdx-js/react": "2.1.2",
-    "@storybook/addon-actions": "6.5.9",
-    "@storybook/addon-docs": "6.5.9",
-    "@storybook/addon-essentials": "6.5.9",
-    "@storybook/addon-links": "6.5.9",
-    "@storybook/addon-storysource": "6.5.9",
-    "@storybook/addons": "6.5.9",
-    "@storybook/react": "6.5.9",
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "13.3.0",
     "@types/jest": "28.1.6",
