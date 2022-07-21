@@ -128,6 +128,10 @@ FacebookLoginClient.logout(() => {
 });
 ```
 
+## Examples
+
+You can checkout examples [here](./examples)
+
 ## Props
 
 Check all available params,options [here](./docs/params.md)
