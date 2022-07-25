@@ -23,6 +23,7 @@ React Component for Facebook Login. aims to improve [react-facebook-login](https
 - [Usage](#usage)
   - [Component](#component)
   - [FacebookLoginClient](#facebookloginclient)
+- [Examples](#examples)
 - [Props](#props)
 - [Stay in touch](#stay-in-touch)
 - [License](#license)
