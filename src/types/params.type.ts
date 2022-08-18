@@ -96,7 +96,7 @@ export type FacebookLoginProps = Pick<InitParams, 'appId'> & {
    * @default 'name,email,picture' */
   fields?: string;
 
-  onSuccess?: (res: LoginResponse['authResponse']) => void;
+  onSuccess?: (res: LoginResponse['authResponse']!) => void;
 
   onFail?: (err: { status: string }) => void;
 
