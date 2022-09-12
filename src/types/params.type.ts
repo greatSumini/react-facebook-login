@@ -11,7 +11,15 @@ export type InitParams = {
    *
    * (available versions: https://developers.facebook.com/docs/graph-api/changelog)
    * @default 'v9.0' */
-  version?: 'v7.0' | 'v8.0' | 'v9.0' | 'v10.0' | 'v11.0' | 'v12.0' | 'v13.0' | 'v14.0';
+  version?:
+    | 'v7.0'
+    | 'v8.0'
+    | 'v9.0'
+    | 'v10.0'
+    | 'v11.0'
+    | 'v12.0'
+    | 'v13.0'
+    | 'v14.0';
 
   /** Determines whether a cookie is created for the session or not. If enabled, it can be accessed by server-side code.
    * @default false */
@@ -96,7 +104,7 @@ export type FacebookLoginProps = Pick<InitParams, 'appId'> & {
    * @default 'name,email,picture' */
   fields?: string;
 
-  onSuccess?: (res: LoginResponse['authResponse']!) => void;
+  onSuccess?: (res: LoginResponse['authResponse']) => void;
 
   onFail?: (err: { status: string }) => void;
 
