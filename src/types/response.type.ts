@@ -32,4 +32,8 @@ export type AuthResponse = {
   userID: string;
 };
 
+export type LoginResponseError = { 
+  status: 'loginCancelled' | 'facebookNotLoaded' 
+}
+
 export type MeResponse = {};
