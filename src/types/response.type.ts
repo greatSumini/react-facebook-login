@@ -36,4 +36,21 @@ export type LoginResponseError = {
   status: 'loginCancelled' | 'facebookNotLoaded' 
 }
 
-export type MeResponse = {};
+/**
+ * Response from /me endpoint. These values will vary depending on provided fields param.
+ * 
+ * @see https://developers.facebook.com/docs/graph-api/reference/user/
+ */
+export type MeResponse = {
+  id?: string,
+  email?: string,
+  name?: string,
+  picture?: {
+    data: {
+      height: number,
+      width: string,
+      is_silhouette: boolean,
+      url: string,
+    }
+  }
+};

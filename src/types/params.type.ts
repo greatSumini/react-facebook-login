@@ -1,7 +1,7 @@
 import { CSSProperties, ReactElement, ReactNode, ReactNodeArray } from 'react';
 import { FB } from './fb.type';
 
-import { AuthResponse, LoginResponseError } from './response.type';
+import { AuthResponse, LoginResponseError, MeResponse } from './response.type';
 
 export type InitParams = {
   /** Your application ID. */
@@ -108,7 +108,7 @@ export type FacebookLoginProps = Pick<InitParams, 'appId'> & {
 
   onFail?: (err: LoginResponseError) => void;
 
-  onProfileSuccess?: (res: unknown) => void;
+  onProfileSuccess?: (res: MeResponse) => void;
 
   className?: string;
 
