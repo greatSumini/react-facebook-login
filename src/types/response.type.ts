@@ -52,5 +52,8 @@ export type ProfileSuccessResponse = {
       is_silhouette: boolean,
       url: string,
     }
-  }
+  },
+  // This response will change depending on fields param
+  //eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
 };
