@@ -6,10 +6,10 @@ export enum LoginStatus {
 
 export type LoginResponse = {
   status: LoginStatus;
-  authResponse?: AuthResponse;
+  authResponse?: SuccessResponse;
 };
 
-export type AuthResponse = {
+export type SuccessResponse = {
   /** An access token for the person using the webpage. */
   accessToken: string;
 
@@ -32,7 +32,7 @@ export type AuthResponse = {
   userID: string;
 };
 
-export type LoginResponseError = { 
+export type FailResponse = { 
   status: 'loginCancelled' | 'facebookNotLoaded' 
 }
 
@@ -41,7 +41,7 @@ export type LoginResponseError = {
  * 
  * @see https://developers.facebook.com/docs/graph-api/reference/user/
  */
-export type MeResponse = {
+export type ProfileSuccessResponse = {
   id?: string,
   email?: string,
   name?: string,
