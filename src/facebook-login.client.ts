@@ -59,7 +59,11 @@ export const FacebookLoginClient = {
       }.js`
     );
   },
-  redirectToDialog(dialogParams: DialogParams, loginOptions: LoginOptions) {
+  redirectToDialog(
+    dialogParams: DialogParams,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    { ignoreSdkError, ...loginOptions }: LoginOptions
+  ) {
     window.location.href = `https://www.facebook.com/dialog/oauth${objectToParams(
       {
         ...dialogParams,
@@ -67,8 +71,19 @@ export const FacebookLoginClient = {
       }
     )}`;
   },
-  login(callback: (res: LoginResponse) => void, loginOptions: LoginOptions) {
-    this.getFB()?.login(callback, loginOptions);
+  login(
+    callback: (res: LoginResponse) => void,
+    { ignoreSdkError, ...loginOptions }: LoginOptions
+  ) {
+    try {
+      this.getFB()?.login(callback, loginOptions);
+    } catch (e) {
+      if (ignoreSdkError) {
+        return;
+      } else {
+        throw e;
+      }
+    }
   },
   logout(callback: (res?: unknown) => void) {
     this.getLoginStatus((res) => {

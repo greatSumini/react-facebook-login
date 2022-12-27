@@ -1,7 +1,11 @@
 import { CSSProperties, ReactElement, ReactNode, ReactNodeArray } from 'react';
 import { FB } from './fb.type';
 
-import { SuccessResponse, FailResponse, ProfileSuccessResponse } from './response.type';
+import {
+  SuccessResponse,
+  FailResponse,
+  ProfileSuccessResponse,
+} from './response.type';
 
 export type InitParams = {
   /** Your application ID. */
@@ -88,6 +92,10 @@ export type LoginOptions = {
 
   /** The auth_nonce parameter is intended to be a completely arbitrary alphanumeric code that your app generates. The process of generation and format of this code is entirely up to you. For example, a hashed version of a timestamp and a secret string may be sufficient, as long as it's completely unique to each Login attempt. This value enables your app to determine whether a user has been re-authenticated. */
   auth_nonce?: string | (() => string);
+
+  /** When true, errors catched for window.FB.login() will be ignored
+   *  @default false */
+  ignoreSdkError?: boolean;
 };
 
 export type FacebookLoginProps = Pick<InitParams, 'appId'> & {
