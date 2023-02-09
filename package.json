@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.20.12",
-    "@mdx-js/react": "2.2.1",
+    "@mdx-js/react": "2.3.0",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "13.4.0",
     "@types/jest": "29.4.0",
