@@ -137,24 +137,24 @@ You can checkout examples [here](./examples)
 
 Check all available params,options [here](./docs/params.md)
 
-| Property         | Description                                      | Type                        | Default                  |
-| ---------------- | ------------------------------------------------ | --------------------------- | ------------------------ |
-| appId \*         | Your application ID.                             | string                      | -                        |
-| language         | API version                                      | string                      | 'en_US'                  |
-| scope            | Comma seperated list of permissions for login.   | string                      | 'public_profile, email'  |
-| fields           | fields return by /me (profile)                   | string                      | 'name,email,picture'     |
-| onSuccess        |                                                  | function                    | -                        |
-| onFail           |                                                  | function                    | -                        |
-| onProfileSuccess |                                                  | function                    | -                        |
-| style            | css properties for login button                  | CSSProperties               | -                        |
-| children         | Children Component                               | ReactNode \| ReactNodeArray | "Login with Facebook"    |
-| render           | Callback which render custom component           | function                    | -                        |
-| autoLoad         | if true, request login on mount                  | boolean                     | false                    |
-| useRedirect      | if true, use redirect instead of window.FB.login | boolean                     | false                    |
-| useCustomChat    | if true, append 'xfbml.customerchat' to sdk url  | boolean                     | false                    |
-| initParams       | params for FB.init                               | InitParams                  | [docs](./docs/params.md) |
-| dialogParams     | params for login dialog                          | DialogParams                | [docs](./docs/params.md) |
-| loginOptions     | options for FB.login                             | LoginOptions                | [docs](./docs/params.md) |
+| Property         | Description                                      | Type                        | Default                                                                                                       |
+| ---------------- | ------------------------------------------------ | --------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| appId \*         | Your application ID.                             | string                      | -                                                                                                             |
+| language         | API version                                      | string                      | 'en_US'                                                                                                       |
+| scope            | Comma seperated list of permissions for login.   | string                      | 'public_profile, email'                                                                                       |
+| fields           | fields return by /me (profile)                   | string                      | 'name,email,picture'                                                                                          |
+| onSuccess        |                                                  | function                    | -                                                                                                             |
+| onFail           |                                                  | function                    | -                                                                                                             |
+| onProfileSuccess |                                                  | function                    | -                                                                                                             |
+| style            | css properties for login button                  | CSSProperties               | -                                                                                                             |
+| children         | Children Component                               | ReactNode \| ReactNodeArray | "Login with Facebook"                                                                                         |
+| render           | Callback which render custom component           | function                    | -                                                                                                             |
+| autoLoad         | if true, request login on mount                  | boolean                     | false                                                                                                         |
+| useRedirect      | if true, use redirect instead of window.FB.login | boolean                     | false (forced to be true in fb browers ([ref](https://github.com/greatSumini/react-facebook-login/issues/2))) |
+| useCustomChat    | if true, append 'xfbml.customerchat' to sdk url  | boolean                     | false                                                                                                         |
+| initParams       | params for FB.init                               | InitParams                  | [docs](./docs/params.md)                                                                                      |
+| dialogParams     | params for login dialog                          | DialogParams                | [docs](./docs/params.md)                                                                                      |
+| loginOptions     | options for FB.login                             | LoginOptions                | [docs](./docs/params.md)                                                                                      |
 
 <br/>
 

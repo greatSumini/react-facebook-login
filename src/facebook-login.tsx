@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 
 import { FacebookLoginClient } from './facebook-login.client';
+import { isFacebookApp } from './helpers/ua.helper';
 import {
   DialogParams,
   InitParams,
@@ -91,7 +92,7 @@ export default function FacebookLogin(props: FacebookLoginProps) {
   };
 
   const handleButtonClick = () => {
-    if (useRedirect) {
+    if (isFacebookApp() || useRedirect) {
       FacebookLoginClient.redirectToDialog(dialogParams, loginOptions);
       return;
     }

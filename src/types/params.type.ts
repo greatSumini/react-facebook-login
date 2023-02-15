@@ -137,6 +137,9 @@ export type FacebookLoginProps = Pick<InitParams, 'appId'> & {
   autoLoad?: boolean;
 
   /** if true, use redirect instead of window.FB.login
+   *
+   * forced to be true in fb browers
+   * @ref https://github.com/greatSumini/react-facebook-login/issues/2
    * @default false */
   useRedirect?: boolean;
 
