@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 
-import { FacebookLoginClient } from './facebook-login.client';
-import { isFacebookApp } from './helpers/ua.helper';
 import {
   DialogParams,
   InitParams,
   LoginOptions,
   FacebookLoginProps,
 } from './types';
+
+import { FacebookLoginClient } from './facebook-login.client';
+import { isFacebookApp } from './helpers';
 
 export default function FacebookLogin(props: FacebookLoginProps) {
   const {

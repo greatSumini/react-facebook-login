@@ -13,6 +13,11 @@ export const createScriptEle = (id: string, src: string) => {
     js.src = src;
     js.onload = resolve;
 
-    fjs.parentNode!.insertBefore(js, fjs);
+    if (fjs) {
+      fjs.parentNode?.insertBefore(js, fjs);
+    } else {
+      const children = document.body.childNodes;
+      document.body.insertBefore(js, children.item(children.length - 1));
+    }
   });
 };
