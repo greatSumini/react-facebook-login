@@ -5,6 +5,7 @@ export const createScriptEle = (id: string, src: string) => {
 
     // return if script already exists
     if (document.getElementById(id)) {
+      resolve(undefined);
       return;
     }
 
