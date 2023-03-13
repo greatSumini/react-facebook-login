@@ -2,6 +2,12 @@
 
 # Release Notes
 
+## 3.3.0
+
+### Core
+
+- enhance(): update allowed Facebook API versions
+
 ## 3.2.0
 
 ### Core

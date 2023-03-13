@@ -23,7 +23,9 @@ export type InitParams = {
     | 'v11.0'
     | 'v12.0'
     | 'v13.0'
-    | 'v14.0';
+    | 'v14.0'
+    | 'v15.0'
+    | 'v16.0';
 
   /** Determines whether a cookie is created for the session or not. If enabled, it can be accessed by server-side code.
    * @default false */
