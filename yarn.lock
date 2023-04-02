@@ -819,10 +819,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@18.0.31", "@types/react@>=16":
-  version "18.0.31"
-  resolved "https://registry.npmjs.org/@types/react/-/react-18.0.31.tgz"
-  integrity sha512-EEG67of7DsvRDU6BLLI0p+k1GojDLz9+lZsnCpCRTa/lOokvyPBvp8S5x+A24hME3yyQuIipcP70KJ6H7Qupww==
+"@types/react@*", "@types/react@18.0.32", "@types/react@>=16":
+  version "18.0.32"
+  resolved "https://registry.npmjs.org/@types/react/-/react-18.0.32.tgz"
+  integrity sha512-gYGXdtPQ9Cj0w2Fwqg5/ak6BcK3Z15YgjSqtyDizWUfx7mQ8drs0NBUzRRsAdoFVTO8kJ8L2TL8Skm7OFPnLUw==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
