@@ -25,7 +25,8 @@ export type InitParams = {
     | 'v13.0'
     | 'v14.0'
     | 'v15.0'
-    | 'v16.0';
+    | 'v16.0'
+    | 'v17.0';
 
   /** Determines whether a cookie is created for the session or not. If enabled, it can be accessed by server-side code.
    * @default false */
@@ -81,6 +82,9 @@ export type LoginOptions = {
   auth_type?: 'rerequest' | 'reauthenticate' | 'reauthorize';
 
   scope: string;
+
+  /** Facebook login for business uses config_id instead of scope - won't work without this - reference: https://developers.facebook.com/docs/facebook-login/facebook-login-for-business/  */
+  config_id?: string;
 
   /** When true, the granted scopes will be returned in a comma-separated list in the grantedScopes field of the authResponse
    * @default false */
