@@ -833,10 +833,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@18.2.29", "@types/react@>=16":
-  version "18.2.29"
-  resolved "https://registry.npmjs.org/@types/react/-/react-18.2.29.tgz"
-  integrity sha512-Z+ZrIRocWtdD70j45izShRwDuiB4JZqDegqMFW/I8aG5DxxLKOzVNoq62UIO82v9bdgi+DO1jvsb9sTEZUSm+Q==
+"@types/react@*", "@types/react@18.2.30", "@types/react@>=16":
+  version "18.2.30"
+  resolved "https://registry.npmjs.org/@types/react/-/react-18.2.30.tgz"
+  integrity sha512-OfqdJnDsSo4UNw0bqAjFCuBpLYQM7wvZidz0hVxHRjrEkzRlvZL1pJVyOSY55HMiKvRNEo9DUBRuEl7FNlJ/Vg==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
