@@ -39,7 +39,7 @@
     "@mdx-js/react": "3.0.0",
     "@testing-library/jest-dom": "6.1.4",
     "@testing-library/react": "14.0.0",
-    "@types/jest": "29.5.7",
+    "@types/jest": "29.5.8",
     "@types/node": "20.8.10",
     "@types/react": "18.2.36",
     "@types/testing-library__jest-dom": "5.14.9",
