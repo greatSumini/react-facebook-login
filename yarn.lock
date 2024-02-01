@@ -815,10 +815,10 @@
   resolved "https://registry.npmjs.org/@types/mdx/-/mdx-2.0.2.tgz"
   integrity sha512-mJGfgj4aWpiKb8C0nnJJchs1sHBHn0HugkVfqqyQi7Wn6mBRksLeQsPOFvih/Pu8L1vlDzfe/LidhVHBeUk3aQ==
 
-"@types/node@*", "@types/node@20.11.14":
-  version "20.11.14"
-  resolved "https://registry.npmjs.org/@types/node/-/node-20.11.14.tgz"
-  integrity sha512-w3yWCcwULefjP9DmDDsgUskrMoOy5Z8MiwKHr1FvqGPtx7CvJzQvxD7eKpxNtklQxLruxSXWddyeRtyud0RcXQ==
+"@types/node@*", "@types/node@20.11.15":
+  version "20.11.15"
+  resolved "https://registry.npmjs.org/@types/node/-/node-20.11.15.tgz"
+  integrity sha512-gscmuADZfvNULx1eyirVbr3kVOVZtpQtzKMCZpeSZcN6MfbkRXAR4s9/gsQ4CzxLHw6EStDtKLNtSDL3vbq05A==
   dependencies:
     undici-types "~5.26.4"
 
