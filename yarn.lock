@@ -834,10 +834,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@18.2.51":
-  version "18.2.51"
-  resolved "https://registry.npmjs.org/@types/react/-/react-18.2.51.tgz"
-  integrity sha512-XeoMaU4CzyjdRr3c4IQQtiH7Rpo18V07rYZUucEZQwOUEtGgTXv7e6igQiQ+xnV6MbMe1qjEmKdgMNnfppnXfg==
+"@types/react@*", "@types/react@18.2.52":
+  version "18.2.52"
+  resolved "https://registry.npmjs.org/@types/react/-/react-18.2.52.tgz"
+  integrity sha512-E/YjWh3tH+qsLKaUzgpZb5AY0ChVa+ZJzF7ogehVILrFpdQk6nC/WXOv0bfFEABbXbgNxLBGU7IIZByPKb6eBw==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
