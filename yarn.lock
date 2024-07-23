@@ -695,10 +695,10 @@
     lz-string "^1.4.4"
     pretty-format "^27.0.2"
 
-"@testing-library/jest-dom@6.4.7":
-  version "6.4.7"
-  resolved "https://registry.npmjs.org/@testing-library/jest-dom/-/jest-dom-6.4.7.tgz"
-  integrity sha512-GaKJ0nijoNf30dWSOOzQEBkWBRk4rG3C/efw8zKrimNuZpnS/6/AEwo0WvZHgJxG84cNCgxt+mtbe1fsvfLp2A==
+"@testing-library/jest-dom@6.4.8":
+  version "6.4.8"
+  resolved "https://registry.npmjs.org/@testing-library/jest-dom/-/jest-dom-6.4.8.tgz"
+  integrity sha512-JD0G+Zc38f5MBHA4NgxQMR5XtO5Jx9g86jqturNTt2WUfRmLDIY7iKkWHDCCTiDuFMre6nxAD5wHw9W5kI4rGw==
   dependencies:
     "@adobe/css-tools" "^4.4.0"
     "@babel/runtime" "^7.9.2"
