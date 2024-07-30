@@ -35,7 +35,7 @@
     "react": "^16.0.0 || ^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.24.9",
+    "@babel/core": "7.25.2",
     "@mdx-js/react": "3.0.1",
     "@testing-library/jest-dom": "6.4.8",
     "@testing-library/react": "14.3.1",
