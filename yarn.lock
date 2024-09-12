@@ -758,10 +758,10 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@*", "@types/jest@29.5.12":
-  version "29.5.12"
-  resolved "https://registry.npmjs.org/@types/jest/-/jest-29.5.12.tgz"
-  integrity sha512-eDC8bTvT/QhYdxJAulQikueigY5AsdBRH2yDKW3yveW7svY3+DzN84/2NUgkw10RTiJbWqZrTtoGVdYlvFJdLw==
+"@types/jest@*", "@types/jest@29.5.13":
+  version "29.5.13"
+  resolved "https://registry.npmjs.org/@types/jest/-/jest-29.5.13.tgz"
+  integrity sha512-wd+MVEZCHt23V0/L642O5APvspWply/rGY5BcW4SUETo2UzPU3Z26qr8jC2qxpimI2jjx9h7+2cj2FwIr01bXg==
   dependencies:
     expect "^29.0.0"
     pretty-format "^29.0.0"
