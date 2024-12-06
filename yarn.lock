@@ -793,10 +793,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@18.3.13":
-  version "18.3.13"
-  resolved "https://registry.npmjs.org/@types/react/-/react-18.3.13.tgz"
-  integrity sha512-ii/gswMmOievxAJed4PAHT949bpYjPKXvXo1v6cRB/kqc2ZR4n+SgyCyvyc5Fec5ez8VnUumI1Vk7j6fRyRogg==
+"@types/react@*", "@types/react@18.3.14":
+  version "18.3.14"
+  resolved "https://registry.npmjs.org/@types/react/-/react-18.3.14.tgz"
+  integrity sha512-NzahNKvjNhVjuPBQ+2G7WlxstQ+47kXZNHlUvFakDViuIEfGY926GqhMueQFZ7woG+sPiQKlF36XfrIUVSUfFg==
   dependencies:
     "@types/prop-types" "*"
     csstype "^3.0.2"
