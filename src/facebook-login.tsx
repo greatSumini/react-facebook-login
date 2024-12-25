@@ -29,7 +29,7 @@ export default function FacebookLogin(props: FacebookLoginProps) {
   } = props;
 
   const initParams: InitParams = {
-    version: 'v9.0',
+    version: 'v16.0',
     xfbml: false,
     cookie: false,
     localStorage: true,
