@@ -5,3 +5,4 @@ storybook-static
 .vscode
 renovate.json
 .idea/
+.DS_Store
