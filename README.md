@@ -39,6 +39,12 @@ yarn add @greatsumini/react-facebook-login
 
 ## Usage
 
+### 🚨 Common Issue - "Sorry, something went wrong"
+
+Facebook requires apps in development to add users explicitly as testers.
+
+Please add app test users under the "App Roles" section. the you can login as one of the added test users.
+
 ### Component
 
 ```tsx
