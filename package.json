@@ -45,7 +45,7 @@
     "@types/testing-library__jest-dom": "5.14.9",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
-    "babel-loader": "9.2.1",
+    "babel-loader": "10.0.0",
     "eslint": "8.57.1",
     "eslint-config-prettier": "10.0.2",
     "eslint-plugin-import": "2.31.0",
