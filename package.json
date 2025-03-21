@@ -38,7 +38,7 @@
     "@babel/core": "7.26.10",
     "@mdx-js/react": "3.1.0",
     "@testing-library/jest-dom": "6.6.3",
-    "@testing-library/react": "14.3.1",
+    "@testing-library/react": "16.2.0",
     "@types/jest": "29.5.14",
     "@types/node": "22.13.11",
     "@types/react": "18.3.19",
