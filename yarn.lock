@@ -774,10 +774,10 @@
   resolved "https://registry.npmjs.org/@types/mdx/-/mdx-2.0.2.tgz"
   integrity sha512-mJGfgj4aWpiKb8C0nnJJchs1sHBHn0HugkVfqqyQi7Wn6mBRksLeQsPOFvih/Pu8L1vlDzfe/LidhVHBeUk3aQ==
 
-"@types/node@*", "@types/node@22.15.14":
-  version "22.15.14"
-  resolved "https://registry.npmjs.org/@types/node/-/node-22.15.14.tgz"
-  integrity sha512-BL1eyu/XWsFGTtDWOYULQEs4KR0qdtYfCxYAUYRoB7JP7h9ETYLgQTww6kH8Sj2C0pFGgrpM0XKv6/kbIzYJ1g==
+"@types/node@*", "@types/node@22.15.15":
+  version "22.15.15"
+  resolved "https://registry.npmjs.org/@types/node/-/node-22.15.15.tgz"
+  integrity sha512-R5muMcZob3/Jjchn5LcO8jdKwSCbzqmPB6ruBxMcf9kbxtniZHP327s6C37iOfuw8mbKK3cAQa7sEl7afLrQ8A==
   dependencies:
     undici-types "~6.21.0"
 
