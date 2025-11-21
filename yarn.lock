@@ -783,13 +783,13 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@18.3.26":
-  version "18.3.26"
-  resolved "https://registry.npmjs.org/@types/react/-/react-18.3.26.tgz"
-  integrity sha512-RFA/bURkcKzx/X9oumPG9Vp3D3JUgus/d0b67KB0t5S/raciymilkOa66olh78MUI92QLbEJevO7rvqU/kjwKA==
+"@types/react@*", "@types/react@18.3.27":
+  version "18.3.27"
+  resolved "https://registry.npmjs.org/@types/react/-/react-18.3.27.tgz"
+  integrity sha512-cisd7gxkzjBKU2GgdYrTdtQx1SORymWyaAFhaxQPK9bYO9ot3Y5OikQRvY0VYQtvwjeQnizCINJAenh/V7MK2w==
   dependencies:
     "@types/prop-types" "*"
-    csstype "^3.0.2"
+    csstype "^3.2.2"
 
 "@types/semver@^7.3.12":
   version "7.5.0"
@@ -1399,10 +1399,10 @@ cssstyle@^2.3.0:
   dependencies:
     cssom "~0.3.6"
 
-csstype@^3.0.2:
-  version "3.0.8"
-  resolved "https://registry.npmjs.org/csstype/-/csstype-3.0.8.tgz"
-  integrity sha512-jXKhWqXPmlUeoQnF/EhTtTl4C9SnrxSH/jZUih3jmO6lBKr99rP3/+FmrMj4EFpOXzMtXHAZkd3x0E6h6Fgflw==
+csstype@^3.2.2:
+  version "3.2.3"
+  resolved "https://registry.npmjs.org/csstype/-/csstype-3.2.3.tgz"
+  integrity sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==
 
 data-urls@^3.0.2:
   version "3.0.2"
