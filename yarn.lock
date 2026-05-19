@@ -891,10 +891,10 @@
   resolved "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.3.tgz"
   integrity sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
 
-"@types/react@18.3.28":
-  version "18.3.28"
-  resolved "https://registry.npmjs.org/@types/react/-/react-18.3.28.tgz"
-  integrity sha512-z9VXpC7MWrhfWipitjNdgCauoMLRdIILQsAEV+ZesIzBq/oUlxk0m3ApZuMFCXdnS4U7KrI+l3WRUEGQ8K1QKw==
+"@types/react@18.3.29":
+  version "18.3.29"
+  resolved "https://registry.npmjs.org/@types/react/-/react-18.3.29.tgz"
+  integrity sha512-ch0qJdr2JY0r04NXSprbK6TXOgnaJ1Tz23fm5W+z0/CBah6BSBc3n96h7K9GOtwh0HrilNWHIBzE1Ko4Dcw/Wg==
   dependencies:
     "@types/prop-types" "*"
     csstype "^3.2.2"
